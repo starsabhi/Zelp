@@ -1,0 +1,13 @@
+form {
+    justify-content: center;
+    align-items: center;
+    border: solid 2px;
+    display: flex;
+    flex-direction: column;
+    margin: 60px auto 0;
+    width: 80%;
+    max-width: 450px;
+    min-width: min-content;
+    padding: 20px;
+    box-shadow: inset 0px 0px 5px 2px rgb(0 0 0 / 30%);
+}
