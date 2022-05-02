@@ -1,4 +1,4 @@
-.homepageImg{
-    height: fit-content;
-    max-height: 400px;
+.homepageImg {
+    width:-webkit-fill-available;
+    height:400px
 }
