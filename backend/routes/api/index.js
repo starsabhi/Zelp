@@ -4,13 +4,13 @@ const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
 const { User } = require('../../db/models');
 const { setTokenCookie, restoreUser, requireAuth } = require('../../utils/auth.js');
-// const businessRouter = require("./business");
+const businessRouter = require("./business.js");
 
 router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
 
-// router.use('/business', businessRouter )
+router.use('/business', businessRouter )
 
 
 
