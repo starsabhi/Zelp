@@ -10,12 +10,12 @@ ul {
 
 .navLogin {
 margin-left: 10px;
-color: black;
+color: white;
 text-decoration: none;
 }
 
 .navSignUp {
-    color: black;
+    color: white;
     text-decoration: none;
 
 }
@@ -28,4 +28,8 @@ text-decoration: none;
 .loginnsignup{
     display: flex;
     flex-direction: row-reverse;
+}
+
+.navbarli{
+    background-color: black;
 }
