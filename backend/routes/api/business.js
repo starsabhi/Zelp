@@ -20,7 +20,7 @@ return res.json(business);
 }))
 
 router.get("/new", asyncHandler(async(req,res)=>{
-const business = db.Business.build();
+const business = await db.Business.create(req.body);
 res.json(business);
 }))
 
