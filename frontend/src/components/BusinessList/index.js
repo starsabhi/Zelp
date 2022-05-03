@@ -19,7 +19,7 @@ const BusinessList = () => {
         {businessList?.map(({id,name,image,city,state})=>(
             <div>
                 <h2 key={id}>{name}</h2>
-                <img src={image}/>
+                <img src={image} onClick={`business/${id}`}/>
                 <p>{city},{state}</p>
             </div>
         ))}
