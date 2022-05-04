@@ -21,11 +21,11 @@ const Businessdetails = () => {
 
     return(
         <>
-            {/* <div key={business.id}>
+            <div key={business.id}>
                 <h2>{business.name}</h2>
                 <img src={business.image}/>
                 <p>{business.city},{business.state}</p>
-            </div> */}
+            </div>
 
         </>
     );

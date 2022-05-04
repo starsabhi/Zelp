@@ -86,11 +86,11 @@ const businessReducer = (state = initialState, action) => {
             return newState
         }
         case GET_ONE_BUSINESS:
-        //     {
-        //     // console.log(action.business);
-        //     // console.log(action);
-        //     return action.business;
-        // }
+            {
+            // console.log(action.business);
+            // console.log(action);
+            return action.business;
+        }
         default :
             return state
     }
