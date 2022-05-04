@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {getOneBusiness} from "../../store/business"
 
 const Businessdetails = () => {
+  const sessionUser = useSelector(state => state.session.user);
+
     // const {businessId} = useParams();
     // console.log(businessId)
     const dispatch = useDispatch();
@@ -24,7 +26,11 @@ const Businessdetails = () => {
             <div key={business.id}>
                 <h2>{business.name}</h2>
                 <img src={business.image}/>
-                <p>{business.city},{business.state}</p>
+                <p>Description:  {business.description}</p>
+                <p>Phone Number:{business.phone_number}</p>
+                <h3>{business.city},{business.state}</h3>
+                <button>Edit</button>
+                <button>Delete</button>
             </div>
 
         </>

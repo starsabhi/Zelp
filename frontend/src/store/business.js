@@ -3,6 +3,7 @@ import { csrfFetch } from "./csrf";
 const GET_ALL_BUSINESS = "/business/getAllbusinessess"
 const GET_ONE_BUSINESS = "/business/oneBusiness"
 const ADD_BUSINESS = "/business/new"
+const EDIT_BUSINESS = "/business/editBusiness"
 
 const loadBusiness = (businessess) => {
     return {
@@ -26,6 +27,15 @@ const addBusiness = (business) => {
         business
     }
 }
+
+
+const editBusiness = (business) => {
+    return {
+        type: EDIT_BUSINESS,
+        business
+    }
+}
+
 
 
 export const writeBusiness = (payload) => async (dispatch) => {

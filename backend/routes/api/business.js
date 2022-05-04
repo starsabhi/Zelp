@@ -56,7 +56,19 @@ const business = await db.Business.findByPk(businessId);
 return res.json(business);
 }))
 
+router.patch("/:businessId", requireAuth, asyncHandler(async (req,res) => {
+ const { body } = req.body;
+ const {businessId} = req.params;
+ const business = await db.Business.findByPk(businessId, {
+     include : [
+         {model: db.user}
+     ]
+ })
 
+ await business.update({body})
+ res.json(business);
+
+}))
 
 
 module.exports = router
