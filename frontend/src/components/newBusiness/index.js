@@ -52,7 +52,7 @@ const NewBusiness = () => {
     setImage('')
   }
   if(!sessionUser){
-    // console.log("HEllo without user**************")
+    console.log("HEllo without user**************")
     return (
       <>
     <Redirect to="/signup"></Redirect>
@@ -61,7 +61,7 @@ const NewBusiness = () => {
   }
 
   else{
-    // console.log("HEllo wokring*********")
+    console.log("HEllo wokring*********")
 
   return (
       <div className="inputBox">

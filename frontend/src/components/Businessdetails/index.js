@@ -9,11 +9,11 @@ const Businessdetails = () => {
     const dispatch = useDispatch();
     // console.log(window.location.pathname)
     const url = window.location.pathname
-    // console.log(url[url.length-1])
+     console.log(url[url.length-1])
     const id = url[url.length-1];
     // console.log(businessId)
-    // const {business} = useSelector((state)=> state);
-    // console.log(business)
+    const {business} = useSelector((state)=> state);
+    console.log(business)
     useEffect(()=>{
         dispatch(getOneBusiness(id))
         // console.log(getOneBusiness(businessId))
