@@ -29,7 +29,7 @@ const addBusiness = (business) => {
 
 
 export const writeBusiness = (payload) => async (dispatch) => {
-    const response = await csrfFetch("api/business/",{
+    const response = await csrfFetch("/api/business/new",{
         method: "POST",
         headers: {"Content-Type":"application/json"},
         body : JSON.stringify(payload)
@@ -38,6 +38,7 @@ export const writeBusiness = (payload) => async (dispatch) => {
     if(response.ok){
         const busniess = await response.json()
         dispatch(addBusiness(busniess))
+        console.log(busniess)
         return busniess;
     }
 
@@ -45,11 +46,13 @@ export const writeBusiness = (payload) => async (dispatch) => {
 
 
 export const getOneBusiness = (businessId) => async (dispatch) => {
+    console.log(businessId, "**********************What is this************************")
     const response = await csrfFetch(`/api/business/${businessId}`, {
       method: "GET",
     });
     const business = await response.json();
     dispatch(oneBusiness(business));
+    console.log(business, "****************************************************")
     return business;
   };
 
@@ -72,13 +75,22 @@ const businessReducer = (state = initialState, action) => {
     // console.log(state)
     switch (action.type){
         case GET_ALL_BUSINESS:{
-            const newState = {};
+            let newState = {};
             action.businessess.forEach(business =>(newState[business.id]=business));
-            console.log(newState);
+            // console.log(newState);
             return newState
         }
-        case ADD_BUSINESS:
+        case ADD_BUSINESS:{
+            let newState = {...state}
+            newState[action.busniess.id] = action.business
+            return newState
+        }
         case GET_ONE_BUSINESS:
+        //     {
+        //     // console.log(action.business);
+        //     // console.log(action);
+        //     return action.business;
+        // }
         default :
             return state
     }

@@ -30,11 +30,11 @@ function App() {
           <Route path="/" exact>
             <Home />
           </Route>
-          <Route path="business/:businessId">
-            <Businessdetails />
-          </Route>
-          <Route path="/new">
+          <Route path="/new" exact>
             <NewBusiness/>
+          </Route>
+          <Route path="/:businessId">
+            <Businessdetails />
           </Route>
         </Switch>
       )}

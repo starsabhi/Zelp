@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector} from "react-redux"
 import { getAllbusinessess } from "../../store/business";
 import "./BusinessList.css"
+import { NavLink } from "react-router-dom";
 
 const BusinessList = () => {
     const dispatch = useDispatch();
@@ -17,9 +18,11 @@ const BusinessList = () => {
         <>
         <h1>Business List</h1>
         {businessList?.map(({id,name,image,city,state})=>(
-            <div>
-                <h2 key={id}>{name}</h2>
-                <img src={image} onClick={`business/${id}`}/>
+            <div key={id}>
+                <h2>{name}</h2>
+                <NavLink to={`business/${id}`}>
+                <img src={image}/>
+                </NavLink>
                 <p>{city},{state}</p>
             </div>
         ))}
