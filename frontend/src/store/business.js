@@ -29,7 +29,7 @@ const addBusiness = (business) => {
 
 
 export const writeBusiness = (payload) => async (dispatch) => {
-    const response = await csrfFetch("api/business/",{
+    const response = await csrfFetch("/api/business/new",{
         method: "POST",
         headers: {"Content-Type":"application/json"},
         body : JSON.stringify(payload)
@@ -45,6 +45,7 @@ export const writeBusiness = (payload) => async (dispatch) => {
 
 
 export const getOneBusiness = (businessId) => async (dispatch) => {
+    console.log(businessId, "**********************What is this************************")
     const response = await csrfFetch(`/api/business/${businessId}`, {
       method: "GET",
     });
@@ -74,11 +75,15 @@ const businessReducer = (state = initialState, action) => {
         case GET_ALL_BUSINESS:{
             const newState = {};
             action.businessess.forEach(business =>(newState[business.id]=business));
-            console.log(newState);
+            // console.log(newState);
             return newState
         }
         case ADD_BUSINESS:
-        case GET_ONE_BUSINESS:
+        case GET_ONE_BUSINESS:{
+            // console.log(action.business);
+            // console.log(action);
+            return action.business;
+        }
         default :
             return state
     }
