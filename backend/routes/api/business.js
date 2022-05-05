@@ -50,13 +50,43 @@ router.post("/new", requireAuth, asyncHandler(async(req,res)=>{
 
 router.get("/:businessId", asyncHandler(async(req,res)=>{
 
-    console.log("****************ROUTE************")
-const {businessId} = req.params;
-const business = await db.Business.findByPk(businessId);
-return res.json(business);
+    const {businessId} = req.params;
+    const business = await db.Business.findByPk(businessId);
+    return res.json(business);
 }))
 
+router.patch("/:businessId/edit", requireAuth, asyncHandler(async (req,res) => {
+    console.log("****************ROUTE************")
+ const {name,
+    ownerId,
+    category,
+    description,
+    address,
+    city,
+    state,
+    zip_code,
+    phone_number,
+    image} = req.body;
+ const {businessId} = req.params;
+ const business = await db.Business.findByPk(businessId)
 
+ if(ownerId === business.ownerId){
+     await business.update({name,
+        ownerId,
+        category,
+        description,
+        address,
+        city,
+        state,
+        zip_code,
+        phone_number,
+        image})
+}
+
+
+ res.json(business);
+
+}))
 
 
 module.exports = router
