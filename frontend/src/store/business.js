@@ -4,6 +4,9 @@ const GET_ALL_BUSINESS = "/business/getAllbusinessess"
 const GET_ONE_BUSINESS = "/business/oneBusiness"
 const ADD_BUSINESS = "/business/new"
 const EDIT_BUSINESS = "/business/editBusiness"
+const DELETE_BUSINESS = "/business/deleteBusiness"
+
+
 
 const loadBusiness = (businessess) => {
     return {
@@ -33,6 +36,26 @@ const editBusiness = (business) => {
     return {
         type: EDIT_BUSINESS,
         business
+    }
+}
+
+const deleteBusiness = (businessId) => {
+    return {
+        type: DELETE_BUSINESS,
+        businessId
+    }
+}
+
+
+
+export const removeBusiness = (businessId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/business/${businessId}`,{
+        method:"DELETE"
+    })
+
+    if(response.ok){
+        const businessId = await response.json()
+        dispatch(deleteBusiness(businessId))
     }
 }
 
@@ -124,6 +147,11 @@ const businessReducer = (state = initialState, action) => {
             // newState[action.busniess.id] = action.business
             // return newState
             return action.business
+        }
+        case DELETE_BUSINESS:{
+            let newState = {...state}
+            delete newState[action.businessId]
+            return newState
         }
         default :
             return state
