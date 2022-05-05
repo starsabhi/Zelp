@@ -89,4 +89,15 @@ router.patch("/:businessId/edit", requireAuth, asyncHandler(async (req,res) => {
 }))
 
 
+
+
+router.delete("/:businessId", requireAuth, asyncHandler(async (req,res) => {
+    const {businessId} = req.params;
+    const business = await db.Business.findByPk(businessId);
+    await business.destroy()
+    res.json(business.id)
+
+}))
+
+
 module.exports = router

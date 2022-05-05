@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {getOneBusiness} from "../../store/business"
+import {getOneBusiness, removeBusiness} from "../../store/business"
 import { NavLink,Redirect,useHistory } from "react-router-dom";
 
 
@@ -55,6 +55,16 @@ const Businessdetails = () => {
         history.push(`/${business.id}/edit`)
     }
 
+    const handleDelete = (e) => {
+        console.log("IS THIS WORKING*******Handler")
+        // e.preventDefault();
+        const { id } = business;
+        dispatch(removeBusiness(id));
+        console.log("IS THIS WORKING*************")
+        if(removeBusiness){
+            history.push("/")
+        }
+    }
 
 
 /////***************************************************************************************************************************** */
@@ -69,7 +79,7 @@ const Businessdetails = () => {
                 <p>Phone Number:{business.phone_number}</p>
                 <h3>{business.city},{business.state}</h3>
                 <button onClick={handleEdit}>Edit</button>
-                <button>Delete</button>
+                <button onClick={()=>handleDelete()}>Delete</button>
             </div>
 
         </>
