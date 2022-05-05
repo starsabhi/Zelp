@@ -12,7 +12,7 @@ const Businessdetails = () => {
     // const [editBusinessForm, setEditbusinessForm] = useState(false);
     let history = useHistory();
     /////***************************************************************************************************************************** */
-    // const sessionUser = useSelector(state => state.session.user);
+    const sessionUser = useSelector(state => state.session.user);
 
     // const {businessId} = useParams();
     // console.log(businessId)
@@ -29,6 +29,7 @@ const Businessdetails = () => {
         // console.log(getOneBusiness(businessId))
     },[dispatch]);
 
+    console.log(sessionUser.id,"*****#######", business.ownerId);
 
     /////***************************************************************************************************************************** */
 
@@ -78,8 +79,9 @@ const Businessdetails = () => {
                 <p>Description:  {business.description}</p>
                 <p>Phone Number:{business.phone_number}</p>
                 <h3>{business.city},{business.state}</h3>
-                <button onClick={handleEdit}>Edit</button>
-                <button onClick={()=>handleDelete()}>Delete</button>
+
+                {(sessionUser.id===business.ownerId) ? <button onClick={handleEdit}>Edit</button> : <></>}
+                {(sessionUser.id===business.ownerId) ?<button onClick={()=>handleDelete()}>Delete</button>:<></>}
             </div>
 
         </>
