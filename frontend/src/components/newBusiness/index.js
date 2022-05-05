@@ -38,18 +38,9 @@ const NewBusiness = () => {
 
     const business = await dispatch(writeBusiness(newBusiness));
     console.log(business);
-    if(business) reset();
-  }
-  const reset = () =>{
-    setName('');
-    setCategory('');
-    setDescription('');
-    setAddress('');
-    setCity('');
-    setState('');
-    setZipcode('');
-    setPhone_Number('');
-    setImage('')
+    if(business) {
+      history.push("/")
+    }
   }
   if(!sessionUser){
     console.log("HEllo without user**************")
