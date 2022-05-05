@@ -101,6 +101,7 @@ export const getOneBusiness = (businessId) => async (dispatch) => {
       method: "GET",
     });
     const business = await response.json();
+    console.log(business, "************************************************BEORE****")
     dispatch(oneBusiness(business));
     console.log(business, "****************************************************")
     return business;
@@ -131,15 +132,19 @@ const businessReducer = (state = initialState, action) => {
             return newState
         }
         case ADD_BUSINESS:{
-            let newState = {...state}
-            newState[action.busniess.id] = action.business
+            let newState = {}
+            // console.log(action.business.id,"*######****")
+            newState[action.business.id] = action.business
+            // console.log("COMPLETED ******************OR NOT")
             return newState
         }
         case GET_ONE_BUSINESS:
             {
-            // console.log(action.business);
-            // console.log(action);
-            return action.business;
+                // let newState = {}
+                // console.log(action,"*######************************************************************")
+                // newState[action.business.id] = action.business
+                console.log(action.business,"COMPLETED ******************OR NOT")
+                return action.business;
         }
         case EDIT_BUSINESS:{
             // console.log("REDUCER********************",action.business)

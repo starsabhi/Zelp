@@ -14,22 +14,27 @@ const Businessdetails = () => {
     /////***************************************************************************************************************************** */
     const sessionUser = useSelector(state => state.session.user);
 
-    // const {businessId} = useParams();
-    // console.log(businessId)
+    // const businessId = useParams();
+    // console.log(businessId,"************************************************************************")
     const dispatch = useDispatch();
     // console.log(window.location.pathname)
     const url = window.location.pathname
-    console.log(url[url.length-1])
-    const id = url[url.length-1];
-    // console.log(businessId)
+    const Arr = url.split("/")
+    const id = Arr.at(-1)
+    // console.log(url[url.length-1])
+    // const id = url[url.length-1];
+    // console.log(id,"*********************************************************************************")
     const {business} = useSelector((state)=> state);
-    // console.log(business)
+    // console.log(business,"*******************************************************************************")
+    // console.log(sessionUser.id,"*****#######", business.ownerId);
+
+
     useEffect(()=>{
         dispatch(getOneBusiness(id))
         // console.log(getOneBusiness(businessId))
     },[dispatch]);
 
-    console.log(sessionUser.id,"*****#######", business.ownerId);
+
 
     /////***************************************************************************************************************************** */
 
