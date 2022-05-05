@@ -1,0 +1,11 @@
+.businessListimage {
+height: 400px;
+width: 400px;
+}
+
+.businessListDiv {
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    border: solid 1px grey;
+}

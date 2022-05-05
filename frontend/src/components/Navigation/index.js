@@ -40,7 +40,7 @@ function Navigation({ isLoaded }){
     <ul className='navbarli'>
       <li className='navbarli'>
         <NavLink exact to="/"><img className='navbarLogo' src={logo} /></NavLink>
-        <NavLink className="navLogin" to="/new">Create New</NavLink>
+        <NavLink className="createnNew" to="/new">Create New</NavLink>
         {isLoaded && sessionLinks}
       </li>
     </ul>

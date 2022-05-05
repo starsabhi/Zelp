@@ -1,6 +1,7 @@
 .navbarLogo {
     height: 35px;
     width: 80px;
+    margin-top: 10px;
 }
 
 ul {
@@ -13,6 +14,13 @@ margin-left: 10px;
 color: white;
 text-decoration: none;
 }
+
+.createnNew {
+    margin-left: 60px;
+    color: white;
+    text-decoration: none;
+}
+
 
 .navSignUp {
     color: white;
@@ -31,5 +39,6 @@ text-decoration: none;
 }
 
 .navbarli{
+    /* display: inline; */
     background-color: black;
 }

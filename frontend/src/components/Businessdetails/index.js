@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {getOneBusiness, removeBusiness} from "../../store/business"
 import { NavLink,Redirect,useHistory } from "react-router-dom";
-
+import "./Businessdetails.css"
 
 // import EditBusiness from "../EditBusiness/index";
 
@@ -75,7 +75,7 @@ const Businessdetails = () => {
         {/* {console.log(content)} */}
             <div key={business.id}>
                 <h2>{business.name}</h2>
-                <img src={business.image}/>
+                <img className="businessDetailimg" src={business.image}/>
                 <p>Description:  {business.description}</p>
                 <p>Phone Number:{business.phone_number}</p>
                 <h3>{business.city},{business.state}</h3>
