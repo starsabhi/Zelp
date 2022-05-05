@@ -4,11 +4,11 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
-import Navigation from "./components/Navigation";
-import Home from "./components/Home";
-import Businessdetails from "./components/Businessdetails";
-import NewBusiness from "./components/newBusiness";
-import EditBusiness from "./components/EditBusiness"
+import Navigation from "./components/Navigation/index";
+import Home from "./components/Home/index";
+import Businessdetails from "./components/Businessdetails/index";
+import NewBusiness from "./components/newBusiness/index";
+import EditBusiness from "./components/EditBusiness/index"
 
 function App() {
   const dispatch = useDispatch();
