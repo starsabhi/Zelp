@@ -96,14 +96,14 @@ export const writeBusiness = (payload) => async (dispatch) => {
 
 
 export const getOneBusiness = (businessId) => async (dispatch) => {
-    console.log(businessId, "**********************What is this************************")
+    // console.log(businessId, "**********************What is this************************")
     const response = await csrfFetch(`/api/business/${businessId}`, {
       method: "GET",
     });
     const business = await response.json();
-    console.log(business, "************************************************BEORE****")
+    // console.log(business, "************************************************BEORE****")
     dispatch(oneBusiness(business));
-    console.log(business, "****************************************************")
+    // console.log(business, "****************************************************")
     return business;
   };
 

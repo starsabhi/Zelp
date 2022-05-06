@@ -3,6 +3,20 @@ import { csrfFetch } from "./csrf";
 const LOAD_REVIEWS = 'review/LOAD_REVIEWS'
 const ADD_REVIEWS = 'review/ADD_REVIEWS'
 const EDIT_REVIEW = 'review/EDIT_REVIEWS'
+const DELETE_REVIEW = 'review/DELETE_REVIEWS'
+const ONE_REVIEW = "review/ONE_REVIEW"
+
+const removeReviews = (reviews) => ({
+    type: DELETE_REVIEW,
+    reviews
+})
+
+
+const oneReview = (reviews) => ({
+    type: ONE_REVIEW,
+    reviews
+})
+
 
 
 const loadReviews = (reviews) => ({
@@ -31,6 +45,19 @@ export const getReviews = (businessId) =>  async (dispatch) =>{
     }
 }
 
+
+export const getOneReview = (reviewId) => async (dispatch) => {
+
+    const res = await csrfFetch(`api/review/:businessId/${reviewId}`,{
+        method: "GET"
+    });
+
+    const review = await res.json()
+    dispatch(oneReview(review));
+    return review;
+}
+
+
 export const writeReview = (review) => async(dispatch) => {
     const res = await csrfFetch(`/api/review/`,{
         method:"POST",
@@ -46,6 +73,19 @@ export const writeReview = (review) => async(dispatch) => {
         return review
     }
 }
+
+export const deleteReview = (reviewId) => async (dispatch) => {
+    // console.log("&&*&*&*&*&*&*&*", reviewId);
+    const res = await csrfFetch(`/api/review/${reviewId}`,{
+        method:"DELETE"
+    })
+
+    if(res.ok){
+        const reviewId = await res.json();
+        dispatch(removeReviews(reviewId))
+    }
+}
+
 
 
 export const updateReview = (review) => async(dispatch) => {
@@ -89,6 +129,13 @@ const reviewReducer = (state = initialState, action) => {
             return action.review
         }
 
+        case DELETE_REVIEW:{
+            delete newState[action.reviewId]
+            return newState
+        }
+        case ONE_REVIEW:{
+            return action.review
+        }
 
         default:
             return state;
