@@ -44,7 +44,7 @@ const EditBusiness = () => {
       const business = await dispatch(updateBusiness(newBusiness,id));
       console.log(business,"Updating Busniesss Completed");
       if(business){
-          history.push(`/${business.id}`)
+          history.push(`/business/${business.id}`)
       }
     }
 

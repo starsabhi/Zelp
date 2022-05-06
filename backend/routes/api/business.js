@@ -45,9 +45,6 @@ router.post("/new", requireAuth, asyncHandler(async(req,res)=>{
 
 
 
-
-
-
 router.get("/:businessId", asyncHandler(async(req,res)=>{
 
     const {businessId} = req.params;

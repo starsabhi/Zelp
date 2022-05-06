@@ -9,6 +9,8 @@ import Home from "./components/Home/index";
 import Businessdetails from "./components/Businessdetails/index";
 import NewBusiness from "./components/newBusiness/index";
 import EditBusiness from "./components/EditBusiness/index"
+import ReviewDetail from "./components/ReviewDetail";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -37,8 +39,11 @@ function App() {
           <Route path="/:businessId/edit" exact>
             <EditBusiness />
           </Route>
-          <Route path="/:businessId" >
+          <Route path="/business/:businessId" exact>
             <Businessdetails />
+          </Route>
+          <Route path="/review/:businessId/:reviewId" exact>
+            <ReviewDetail />
           </Route>
         </Switch>
       )}

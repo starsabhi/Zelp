@@ -19,6 +19,20 @@ router.get("/:businessId", asyncHandler(async(req,res)=>{
     return res.json(reviews);
 }))
 
+router.get("/:businessId/:reviewId", asyncHandler(async(req,res)=>{
+
+    const {reviewId} = req.params;
+    console.log(reviewId,"*********************")
+    // console.log(reviewId,"GETTING ANYTHING FOR SPECIAL DETAIL PAGE$")
+    // console.log(reviewId,"GETTING ANYTHING FOR SPECIAL DETAIL PAGE$")
+    const review = await db.Review.findByPk(reviewId);
+    console.log(review,"*********************")
+    // console.log(review)
+    return res.json(review);
+
+}))
+
+
 
 router.post("/", asyncHandler(async(req,res) => {
     // console.log("ROUTER COMPLETED OR NOT   *********************")
@@ -36,14 +50,6 @@ router.post("/", asyncHandler(async(req,res) => {
         rating,
         answer
     })
-
-    // console.log("ROUTER COMPLETED OR NOT   *********************")
-    // const review = await db.Review.findByPk(newReview.id,{
-    //     include:[
-    //         {model: db.User}
-    //     ]
-    // })
-    // console.log("ROUTER COMPLETED OR NOT   *********************")
     res.json(newReview)
 }))
 
@@ -80,6 +86,18 @@ router.patch("/:reviewId", asyncHandler( async(req,res) => {
         answer
     })
     res.json(review);
+}))
+
+
+
+
+router.delete("/:reviewId", asyncHandler(async(req,res)=>{
+    const {reviewId} = req.params;
+
+    const review = await db.Review.findByPk(reviewId)
+
+    await review.destroy();
+    res.json(review.id)
 }))
 
 
