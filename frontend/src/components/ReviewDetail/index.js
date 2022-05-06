@@ -5,6 +5,10 @@ import { NavLink,Redirect,useHistory } from "react-router-dom";
 import { getReviews,getOneReview, writeReview, updateReview, deleteReview } from "../../store/reviews";
 
 const ReviewDetail = () => {
+    const thisState = useSelector((state)=> state.review)
+    console.log(thisState,"AHOSCBASNCIPNSAPICNPASPCO")
+    const [content, setContent] = useState(`${thisState.answer}`);
+    console.log(content,"**********GEASNC")
     const [form, setForm] = useState(false);
     const [rating, setRating] = useState("2")
     const dispatch = useDispatch();
@@ -20,8 +24,8 @@ const ReviewDetail = () => {
         // console.log(getOneBusiness(businessId))
     },[dispatch]);
 
-    const review = useSelector(state => state.review)
-    // console.log(review,"THIS IS STATE##########$$$$$$$$$$$")
+    let review = useSelector(state => state.review)
+    console.log(review,"THIS IS STATE##########$$$$$$$$$$$")
 
     const BusinessId = Arr.at(-2)
     // console.log(BusinessId)
@@ -62,9 +66,8 @@ const ReviewDetail = () => {
 
 
     // console.log(review.answer, "THSI IS ANSWER")
-        let currentAns = review.answer;
-        console.log(currentAns,"************")
-        const [answer, setAnswer] = useState(currentAns);
+        // let currentAns = review.answer;
+        // console.log(currentAns,"************")
 
 
         // const reset = () => {
@@ -82,8 +85,8 @@ const ReviewDetail = () => {
                         <form>
                             <input
                             type='text'
-                            onChange={(e)=>setAnswer(e.target.value)}
-                            value={answer}
+                            onChange={(e)=>setContent(e.target.value)}
+                            value={content}
                             placeholder="answer"
                             name="answer"
                             ></input>
