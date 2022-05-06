@@ -143,7 +143,7 @@ const businessReducer = (state = initialState, action) => {
                 // let newState = {}
                 // console.log(action,"*######************************************************************")
                 // newState[action.business.id] = action.business
-                console.log(action.business,"COMPLETED ******************OR NOT")
+                // console.log(action.business,"COMPLETED ******************OR NOT")
                 return action.business;
         }
         case EDIT_BUSINESS:{

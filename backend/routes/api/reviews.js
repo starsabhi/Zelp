@@ -18,3 +18,33 @@ router.get("/:businessId", asyncHandler(async(req,res)=>{
     })
     return res.json(reviews);
 }))
+
+
+router.post("/", asyncHandler(async(req,res) => {
+    console.log("ROUTER COMPLETED OR NOT   *********************")
+    const {
+        userId,
+        businessId,
+        rating,
+        answer
+    } = req.body;
+    console.log("ROUTER COMPLETED OR NOT   *********************")
+
+    const newReview = await db.Review.create({
+        userId,
+        businessId,
+        rating,
+        answer
+    })
+
+    console.log("ROUTER COMPLETED OR NOT   *********************")
+    // const review = await db.Review.findByPk(newReview.id,{
+    //     include:[
+    //         {model: db.User}
+    //     ]
+    // })
+    console.log("ROUTER COMPLETED OR NOT   *********************")
+    res.json(newReview)
+}))
+
+module.exports = router
