@@ -61,7 +61,7 @@ export const removeBusiness = (businessId) => async (dispatch) => {
 
 
 export const updateBusiness = (business, id) => async (dispatch) => {
-    console.log(business,"*****************ID N BUSINESS*******************", id.businessId)
+    // console.log(business,"*****************ID N BUSINESS*******************", id.businessId)
     const response = await csrfFetch(`/api/business/${id.businessId}/edit`,{
         method: "PATCH",
         headers:{

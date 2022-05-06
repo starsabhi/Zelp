@@ -1,7 +1,9 @@
 import { csrfFetch } from "./csrf";
 
-const LOAD_REVIEWS = 'comments/LOAD_REVIEWS'
-const ADD_REVIEWS = 'comments/ADD_REVIEWS'
+const LOAD_REVIEWS = 'review/LOAD_REVIEWS'
+const ADD_REVIEWS = 'review/ADD_REVIEWS'
+const EDIT_REVIEW = 'review/EDIT_REVIEWS'
+
 
 const loadReviews = (reviews) => ({
     type: LOAD_REVIEWS,
@@ -11,6 +13,11 @@ const loadReviews = (reviews) => ({
 const addReview = (reviews) => ({
     type: ADD_REVIEWS,
     reviews
+})
+
+const editReview = (review) => ({
+    type: EDIT_REVIEW,
+    review
 })
 
 
@@ -41,6 +48,24 @@ export const writeReview = (review) => async(dispatch) => {
 }
 
 
+export const updateReview = (review) => async(dispatch) => {
+    const res = await csrfFetch(`/api/${review.id}`,{
+        method:"PATCH",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(review)
+    })
+
+    if(res.ok){
+        const review = await res.json()
+        dispatch(editReview(review))
+        return review
+    }
+
+}
+
+
 const initialState = {}
 const reviewReducer = (state = initialState, action) => {
     let newState = {...state}
@@ -59,6 +84,12 @@ const reviewReducer = (state = initialState, action) => {
             newState[action.id] = action
             return newState
         }
+
+        case EDIT_REVIEW: {
+            return action.review
+        }
+
+
         default:
             return state;
 
