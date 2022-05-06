@@ -13,6 +13,7 @@ const ReviewDetail = () => {
     const [rating, setRating] = useState("2")
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
+    const history = useHistory();
 
 
     const url = window.location.pathname
@@ -36,13 +37,14 @@ const ReviewDetail = () => {
 
 
 
-    // const handleReviewDelete = (e) => {
-    //     const { id } = review;
-    //     dispatch(deleteReview(id));
-    //     if(deleteReview){
-    //         // console.log("Review DELETE working ")
-    //     }
-    // }
+    const handleReviewDelete = (e) => {
+        // const { id } = review;
+        dispatch(deleteReview(id));
+        if(deleteReview){
+            console.log("Review DELETE working ")
+            history.push(`/business/${BusinessId}`)
+        }
+    }
 
     // const handleEditReview = async(e) => {
     //     e.preventDefault();
@@ -79,9 +81,9 @@ const ReviewDetail = () => {
         <>
         <h1>Your Review</h1>
         <h2>{review.answer}</h2>
-        <button onClick={()=>(setForm(true))}>Edit</button>
-        <button >Delete</button>
-                    {(form) ?
+        {/* <button onClick={()=>(setForm(true))}>Edit</button> */}
+        <button onClick={handleReviewDelete}>Delete</button>
+                    {/* {(form) ?
                         <form>
                             <input
                             type='text'
@@ -93,7 +95,7 @@ const ReviewDetail = () => {
                             <button>Submit</button>
                             <button>Cancel</button>
                         </form>
-                        :<></>}
+                        :<></>} */}
     </>
     )
 }
