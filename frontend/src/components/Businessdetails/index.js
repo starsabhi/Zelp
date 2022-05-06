@@ -6,6 +6,7 @@ import { NavLink,Redirect,useHistory } from "react-router-dom";
 import "./Businessdetails.css"
 import { getReviews } from "../../store/reviews";
 import { writeReview } from "../../store/reviews";
+import { updateReview } from "../../store/reviews";
 
 // import EditBusiness from "../EditBusiness/index";
 
@@ -13,6 +14,7 @@ const Businessdetails = () => {
     const [form , setFrom] = useState(false);
     const [answer, setAnswer] = useState("");
     const [rating, setRating] = useState("2")
+    const [editrRviewform, setEditrRviewform ] = useState(false)
 
 
     let history = useHistory();
@@ -48,11 +50,11 @@ const Businessdetails = () => {
 
 
 
-        const handleEdit = () => {
-            history.push(`/${business.id}/edit`)
-        }
+    const handleEdit = () => {
+        history.push(`/${business.id}/edit`)
+    }
 
-        const handleDelete = (e) => {
+    const handleDelete = (e) => {
         console.log("IS THIS WORKING*******Handler")
         const { id } = business;
         dispatch(removeBusiness(id));
@@ -82,6 +84,26 @@ const Businessdetails = () => {
         }
     }
 
+
+    const handleEditReview = async(e) => {
+        e.preventDefault();
+        const newReview = {
+            userId:sessionUser.id,
+            businessId:business.id,
+            rating,
+            answer
+        }
+        const review = await dispatch(updateReview(newReview));
+        if(review){
+            console.log("THIS WORKED AS WELL AS I THINK")
+            setEditrRviewform(false);
+            dispatch(getReviews(id));
+            reset();
+        }
+    }
+
+    const [editanswer, setEditAnswer] = useState(review)
+    console.log(review.reviews,"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
 
 
 
@@ -121,6 +143,18 @@ const Businessdetails = () => {
                 <>
                 {console.log(ele.answer,"GETTTING IT OR NOT")}
                <p>{ele.answer}</p>
+               {(sessionUser.id===ele.userId) ? <button onClick={()=>setEditrRviewform(true)}>EDIT REVIEW</button> : <></>}
+               {
+               (editrRviewform)? <form onSubmit={handleEditReview}>
+                <input
+                type='text'
+                onChange={(e)=>setEditAnswer(e.target.value)}
+                value={editanswer}
+                placeholder="answer"
+                name="answer"
+                ></input>
+                <button>Submit</button>
+            </form>  :<></>}
                </>
             ))}
             </div>

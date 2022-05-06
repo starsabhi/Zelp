@@ -56,7 +56,7 @@ router.get("/:businessId", asyncHandler(async(req,res)=>{
 }))
 
 router.patch("/:businessId/edit", requireAuth, asyncHandler(async (req,res) => {
-    console.log("****************ROUTE************")
+    // console.log("****************ROUTE************")
  const {name,
     ownerId,
     category,
