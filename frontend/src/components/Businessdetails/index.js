@@ -113,8 +113,8 @@ const Businessdetails = () => {
 
 
 
-    const [editanswer, setEditAnswer] = useState(review)
-    console.log(review.reviews,"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+    // const [editanswer, setEditAnswer] = useState(review)
+    // console.log(review.reviews,"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
 
 
 
@@ -154,9 +154,11 @@ const Businessdetails = () => {
                 <>
 
             <p>{ele.answer}</p>
+            {(sessionUser.id===ele.userId)?
             <NavLink to={`/review/${business.id}/${ele.id}`}>
                 EDIT OR DELETE
-            </NavLink>
+            </NavLink> : <></>
+            }
                </>
             ))}
             </div>

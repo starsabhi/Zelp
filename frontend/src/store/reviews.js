@@ -89,8 +89,9 @@ export const deleteReview = (reviewId) => async (dispatch) => {
 
 
 
-export const updateReview = (review) => async(dispatch) => {
-    const res = await csrfFetch(`/api/${review.id}`,{
+export const updateReview = (review,id) => async(dispatch) => {
+    console.log(review)
+    const res = await csrfFetch(`/${id}`,{
         method:"PATCH",
         headers: {
             'Content-Type': 'application/json'
@@ -137,7 +138,7 @@ const reviewReducer = (state = initialState, action) => {
         case ONE_REVIEW:{
             let newState = {};
             newState = {...action.reviews}
-            console.log(action,"****************************")
+            // console.log(action,"****************************")
             return newState
         }
 

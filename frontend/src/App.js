@@ -36,7 +36,7 @@ function App() {
           <Route path="/new" exact>
             <NewBusiness/>
           </Route>
-          <Route path="/business/:businessId/edit" exact>
+          <Route path="/:businessId/edit" exact>
             <EditBusiness />
           </Route>
           <Route path="/business/:businessId" exact>

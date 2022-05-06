@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {getOneBusiness, removeBusiness} from "../../store/business"
 import { NavLink,Redirect,useHistory } from "react-router-dom";
 import { getReviews,getOneReview, writeReview, updateReview, deleteReview } from "../../store/reviews";
 
 const ReviewDetail = () => {
+    const [form, setForm] = useState(false);
+    const [rating, setRating] = useState("2")
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
 
@@ -19,11 +20,11 @@ const ReviewDetail = () => {
         // console.log(getOneBusiness(businessId))
     },[dispatch]);
 
-    const state = useSelector(state => state)
-    console.log(state.review,"THIS IS STATE##########$$$$$$$$$$$")
+    const review = useSelector(state => state.review)
+    // console.log(review,"THIS IS STATE##########$$$$$$$$$$$")
 
     const BusinessId = Arr.at(-2)
-    console.log(BusinessId)
+    // console.log(BusinessId)
 
 
 
@@ -33,35 +34,63 @@ const ReviewDetail = () => {
 
     // const handleReviewDelete = (e) => {
     //     const { id } = review;
-    //     console.log(id, review, "THIS IS WORKING IN MORNING NEW SEASON OF NFL ")
     //     dispatch(deleteReview(id));
     //     if(deleteReview){
-    //         console.log("Review DELETE working ")
+    //         // console.log("Review DELETE working ")
     //     }
     // }
 
     // const handleEditReview = async(e) => {
     //     e.preventDefault();
+    //     console.log( "THIS IS WORKING IN MORNING NEW SEASON OF NFL ")
     //     const newReview = {
     //         userId:sessionUser.id,
-    //         businessId:business.id,
+    //         businessId:BusinessId,
     //         rating,
     //         answer
     //     }
-    //     const review = await dispatch(updateReview(newReview));
+    //     console.log(newReview, "THIS IS WORKING IN MORNING NEW SEASON OF NFL ")
+    //     const review = await dispatch(updateReview(newReview,id));
+    //     console.log(review,"THIS IS WORKING IN MORNING NEW SEASON OF NFL ")
     //     if(review){
     //         console.log("THIS WORKED AS WELL AS I THINK")
-    //         setEditrRviewform(false);
+    //         setForm(false);
     //         dispatch(getReviews(id));
-    //         reset();
+            // reset();
     //     }
     // }
 
 
+    // console.log(review.answer, "THSI IS ANSWER")
+        let currentAns = review.answer;
+        console.log(currentAns,"************")
+        const [answer, setAnswer] = useState(currentAns);
+
+
+        // const reset = () => {
+        //     setAnswer("")
+        // }
+
 
     return (
-    <>
-    <h1>HELLO WORLD</h1>
+        <>
+        <h1>Your Review</h1>
+        <h2>{review.answer}</h2>
+        <button onClick={()=>(setForm(true))}>Edit</button>
+        <button >Delete</button>
+                    {(form) ?
+                        <form>
+                            <input
+                            type='text'
+                            onChange={(e)=>setAnswer(e.target.value)}
+                            value={answer}
+                            placeholder="answer"
+                            name="answer"
+                            ></input>
+                            <button>Submit</button>
+                            <button>Cancel</button>
+                        </form>
+                        :<></>}
     </>
     )
 }
