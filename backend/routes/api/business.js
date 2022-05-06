@@ -15,7 +15,7 @@ res.json(businessess)
 
 
 router.post("/new", requireAuth, asyncHandler(async(req,res)=>{
-    console.log("*************************************************");
+    // console.log("*************************************************");
     const {name,
         ownerId,
         category,
@@ -38,7 +38,7 @@ router.post("/new", requireAuth, asyncHandler(async(req,res)=>{
             phone_number,
             image});
 
-            console.log("*************************************************");
+            // console.log("*************************************************");
 
     res.json(newBusiness);
 }))
