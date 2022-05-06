@@ -62,14 +62,14 @@ const Businessdetails = () => {
     }
 
 
-    const handleReviewDelete = (e) => {
-        const { id } = review;
-        console.log(id, review, "THIS IS WORKING IN MORNING NEW SEASON OF NFL ")
-        dispatch(deleteReview(id));
-        if(deleteReview){
-            console.log("Review DELETE working ")
-        }
-    }
+    // const handleReviewDelete = (e) => {
+    //     const { id } = review;
+    //     console.log(id, review, "THIS IS WORKING IN MORNING NEW SEASON OF NFL ")
+    //     dispatch(deleteReview(id));
+    //     if(deleteReview){
+    //         console.log("Review DELETE working ")
+    //     }
+    // }
 
 
     const handleSubmitReview = async(e) => {
@@ -154,7 +154,7 @@ const Businessdetails = () => {
                 <>
 
             <p>{ele.answer}</p>
-            <NavLink to={`review/${business.id}/${ele.id}`}>
+            <NavLink to={`/review/${business.id}/${ele.id}`}>
                 EDIT OR DELETE
             </NavLink>
                </>

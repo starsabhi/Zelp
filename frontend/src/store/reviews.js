@@ -46,13 +46,14 @@ export const getReviews = (businessId) =>  async (dispatch) =>{
 }
 
 
-export const getOneReview = (reviewId) => async (dispatch) => {
-
-    const res = await csrfFetch(`api/review/:businessId/${reviewId}`,{
+export const getOneReview = (reviewId,BusinessId) => async (dispatch) => {
+    console.log(reviewId,"***********************")
+    const res = await csrfFetch(`/api/review/${BusinessId}/${reviewId}`,{
         method: "GET"
     });
-
+    console.log("GET COMPLETED OT NOT &******")
     const review = await res.json()
+    console.log(review, "GETIING ONE REVIEW OR NOT")
     dispatch(oneReview(review));
     return review;
 }
@@ -134,7 +135,10 @@ const reviewReducer = (state = initialState, action) => {
             return newState
         }
         case ONE_REVIEW:{
-            return action.review
+            let newState = {};
+            newState = {...action.reviews}
+            console.log(action,"****************************")
+            return newState
         }
 
         default:

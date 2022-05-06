@@ -36,13 +36,13 @@ function App() {
           <Route path="/new" exact>
             <NewBusiness/>
           </Route>
-          <Route path="/:businessId/edit" exact>
+          <Route path="/business/:businessId/edit" exact>
             <EditBusiness />
           </Route>
-          <Route path="/:businessId">
+          <Route path="/business/:businessId" exact>
             <Businessdetails />
           </Route>
-          <Route path="/:businessId/:reviewId" >
+          <Route path="/review/:businessId/:reviewId" exact>
             <ReviewDetail />
           </Route>
         </Switch>
