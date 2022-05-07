@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux"
 import { writeBusiness } from "../../store/business";
 import {Redirect,useHistory} from "react-router-dom"
@@ -15,6 +15,26 @@ const NewBusiness = () => {
   const [zip_code, setZipcode] = useState('');
   const [phone_number, setPhone_Number] = useState('');
   const [image, setImage] = useState('');
+  const [validationErrors, setValidationErrors] = useState([]);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+
+  useEffect(()=>{
+    let errors = [];
+    if(!name.length) errors.push("Please Enter Valid Name")
+    if(!category.length) errors.push("Please Enter Valid category")
+    if(!description.length) errors.push("Please Enter Valid description")
+    if(!address.length) errors.push("Please Enter Valid address")
+    if(!city.length) errors.push("Please Enter Valid city")
+    if(!state.length) errors.push("Please Enter Valid state")
+    if(!zip_code.length) errors.push("Please Enter Valid zip code")
+    if(!phone_number.length) errors.push("Please Enter Valid phone number")
+    if(!image.length) errors.push("Please Enter Valid image")
+    setValidationErrors(errors)
+  },[name,category,description,address,city,state,zip_code,phone_number,image])
+
+
+
+
   const sessionUser = useSelector(state => state.session.user);
   // console.log(sessionUser.id);
   const history = useHistory();
@@ -22,6 +42,10 @@ const NewBusiness = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    setHasSubmitted(true)
+
+    if(validationErrors.length) return alert(`Cannot Submit`);
 
     const newBusiness = {
       name,
@@ -58,6 +82,17 @@ const NewBusiness = () => {
       <div className="inputBox">
         <h1>Create Business</h1>
         <form onSubmit={handleSubmit}>
+          <h2>Form to Create your Own Busniess</h2>
+        {(setValidationErrors.length && hasSubmitted) ?
+          <div>
+            <ul>
+              {validationErrors.map(error => (
+                <li key={error}>{error}</li>
+              ))}
+            </ul>
+          </div>
+          :<></>
+        }
           <input
           type='text'
           onChange={(e)=>setName(e.target.value)}
