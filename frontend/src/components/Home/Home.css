@@ -1,9 +1,27 @@
-.homepageImg {
-    width:-webkit-fill-available;
-    height:400px;
-    margin-top: 0px;
+*{
+    font-family: Helvetica
 }
 
-*{
-    font-family: cursive;
+#CenterNameforHome{
+ /* display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100px; */
+ width: 600px;
+ height: 400px;
+ padding: 20px;
+ margin: 30px auto;
+ box-shadow: 0px 0px 10px 2px gray;
+ /* border: 10px solid red; */
+ background-image: url("https://images.pexels.com/photos/370984/pexels-photo-370984.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+ background-size:cover ;
+text-align: center;
+color: white;
+}
+
+#CenterNameforHomeh2{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin-top: 150px;
 }

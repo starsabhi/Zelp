@@ -16,10 +16,10 @@ const BusinessList = () => {
 
     return(
         <>
-        <h1 className="businessListDiv">Business List</h1>
-        <div className="businessListDiv">
+
+        <div>
         {businessList?.map(({id,name,image,city,state})=>(
-            <div className="businessListDiv" key={id}>
+            <div  key={id}>
                 <h2>{name}</h2>
                 <NavLink to={`business/${id}`}>
                 <img className="businessListimage" src={image}/>

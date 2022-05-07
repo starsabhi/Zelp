@@ -14,14 +14,19 @@
     margin-right: 10px;
     cursor: pointer;
      font-family:cursive;
-
+     border-radius: 5px;
 }
 
 #LogoutBtn:hover{
     color:red;
     border-color:#DDDDDD;
+
 }
 
 #profile-dropdown{
     margin-top: 15px;
+}
+
+#demoBtn{
+    font-size: 17px;
 }
