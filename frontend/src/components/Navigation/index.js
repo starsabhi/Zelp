@@ -27,7 +27,7 @@ function Navigation({ isLoaded }){
     );
   } else {
     sessionLinks = (
-      <div className='navBar loginnsignup'>
+      <div id="rightButton">
         <button onClick={demoLogin}>Demo</button>
         <NavLink className="navLogin" to="/login">Log In</NavLink>
         <NavLink className="navSignUp" to="/signup">Sign Up</NavLink>
@@ -38,11 +38,13 @@ function Navigation({ isLoaded }){
   return (
     <div className='navBar'>
     <ul className='navbarli'>
-      <li className='navbarli'>
-        <NavLink exact to="/"><img className='navbarLogo' src={logo} /></NavLink>
-        <NavLink className="createnNew" to="/new">Create New</NavLink>
-        {isLoaded && sessionLinks}
-      </li>
+      {/* <li className='navbarli'> */}
+        <li><NavLink exact to="/">Zelp
+          {/* <img className='navbarLogo' src={logo} /> */}
+          </NavLink></li>
+        <li><NavLink className="createnNew" to="/new">Create New</NavLink></li>
+        <li>{isLoaded && sessionLinks}</li>
+      {/* </li> */}
     </ul>
     </div>
   );

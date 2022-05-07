@@ -2,6 +2,8 @@ import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux"
 import { writeBusiness } from "../../store/business";
 import {Redirect,useHistory} from "react-router-dom"
+import logo from "../../images/logo.png"
+import "./NewBusiness.css"
 
 
 const NewBusiness = () => {
@@ -82,9 +84,10 @@ const NewBusiness = () => {
       <div className="inputBox">
         <h1>Create Business</h1>
         <form onSubmit={handleSubmit}>
+        <img className='navbarLogo' src={logo}></img>
           <h2>Form to Create your Own Busniess</h2>
         {(setValidationErrors.length && hasSubmitted) ?
-          <div>
+          <div id="ErrorDiv">
             <ul>
               {validationErrors.map(error => (
                 <li key={error}>{error}</li>
@@ -93,6 +96,8 @@ const NewBusiness = () => {
           </div>
           :<></>
         }
+          <label>
+          Name :
           <input
           type='text'
           onChange={(e)=>setName(e.target.value)}
@@ -100,6 +105,8 @@ const NewBusiness = () => {
           placeholder="Name"
           name="name"
           ></input>
+          </label>
+
           <input
           type='text'
           onChange={(e)=>setCategory(e.target.value)}

@@ -1,5 +1,10 @@
-.ProfileButton {
+/* .ProfileButton {
     color: white;
     display: flex;
     flex-direction: row-reverse;
-}
+} */
+
+
+  li {
+    display: inline;
+  }
