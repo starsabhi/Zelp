@@ -28,7 +28,7 @@ function Navigation({ isLoaded }){
   } else {
     sessionLinks = (
       <div id="rightButton">
-        <button onClick={demoLogin}>Demo</button>
+        <button id='demoBtn' onClick={demoLogin}>Demo</button>
         <NavLink className="navLogin" to="/login">Log In</NavLink>
         <NavLink className="navSignUp" to="/signup">Sign Up</NavLink>
       </div>
@@ -43,7 +43,7 @@ function Navigation({ isLoaded }){
           {/* <img className='navbarLogo' src={logo} /> */}
           </NavLink></li>
         <li><NavLink className="createnNew" to="/new">Create New</NavLink></li>
-        <li>{isLoaded && sessionLinks}</li>
+        <li id="rightSideinfo">{isLoaded && sessionLinks}</li>
       {/* </li> */}
     </ul>
     </div>

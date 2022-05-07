@@ -1,59 +1,8 @@
-.navbarLogo {
+/* .navbarLogo {
     height: 35px;
     width: 80px;
     margin-top: 10px;
-}
-/*
-ul {
-    list-style-type: none;
-}
-
-
-.navLogin {
-margin-left: 10px;
-color: white;
-text-decoration: none;
-}
-
-.createnNew {
-    margin-left: 60px;
-    color: white;
-    text-decoration: none;
-}
-
-
-.navSignUp {
-    color: white;
-    text-decoration: none;
-
-}
-
-.navBar{
-    display: inline;
-    align-items: center;
-}
-
-.loginnsignup{
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-.navbarli{
-    /* display: inline; */
-    /* background-color: black;
 } */
-
-
-/* ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
-
-  li {
-    display: inline;
-  } */
 
   ul {
     list-style-type: none;
@@ -79,3 +28,15 @@ text-decoration: none;
   #rightButton{
       display: inline-flex;
   }
+
+  #rightSideinfo{
+    float: right;
+  }
+
+
+#demoBtn{
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

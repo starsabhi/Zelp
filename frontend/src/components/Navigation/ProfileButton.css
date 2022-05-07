@@ -3,3 +3,25 @@
     display: flex;
     flex-direction: row-reverse;
 } */
+#nameOfuser{
+    color: white;
+    margin-right: 14px;
+}
+
+#LogoutBtn{
+    border: 1px black;
+    padding: 1px;
+    margin-right: 10px;
+    cursor: pointer;
+     font-family:cursive;
+
+}
+
+#LogoutBtn:hover{
+    color:red;
+    border-color:#DDDDDD;
+}
+
+#profile-dropdown{
+    margin-top: 15px;
+}
