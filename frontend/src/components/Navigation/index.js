@@ -3,8 +3,10 @@ import { NavLink } from 'react-router-dom';
 import { useSelector,useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
-import logo from "../../images/logo.png"
 import {login} from "../../store/session";
+import zelplogo from '../../images/logoZelp.png'
+import navLogoZelp from '../../images/navLogoZelp.png'
+
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
@@ -39,7 +41,7 @@ function Navigation({ isLoaded }){
     <div className='navBar'>
     <ul className='navbarli'>
       {/* <li className='navbarli'> */}
-        <li><NavLink exact to="/">Zelp
+        <li><NavLink exact to="/"><img id='logoZelp' src={navLogoZelp}></img>
           {/* <img className='navbarLogo' src={logo} /> */}
           </NavLink></li>
         <li><NavLink className="createnNew" to="/new">Create New</NavLink></li>

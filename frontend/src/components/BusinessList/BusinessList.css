@@ -1,13 +1,35 @@
 .businessListimage {
 height: 400px;
-width: 400px;
+width: 500px;
 }
 
-.businessListDiv {
+.businessListClass {
 
     display: flex;
     flex-direction: column;
     align-items: center;
     /* /* justify-content: center; */
-    border: solid 1px grey;
+}
+
+.busniessClassArr{
+width: 540px;
+border: solid 1px;
+margin: 2px;
+box-shadow: 0px 0px 10px 2px gray;
+}
+
+.contentdiv{
+margin-left: 20px;
+}
+
+.BusniessIndName{
+display: flex;
+justify-content: center;
+color: #2c2525b6;
+}
+
+.CityandStateName{
+    float: right;
+    margin-right: 50px;
+    color: #2c2525b6;
 }

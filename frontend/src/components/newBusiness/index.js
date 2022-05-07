@@ -4,6 +4,8 @@ import { writeBusiness } from "../../store/business";
 import {Redirect,useHistory} from "react-router-dom"
 import logo from "../../images/logo.png"
 import "./NewBusiness.css"
+import navLogoZelp from '../../images/navLogoZelp.png'
+
 
 
 const NewBusiness = () => {
@@ -84,7 +86,7 @@ const NewBusiness = () => {
       <div className="inputBox">
         <h1>Create Business</h1>
         <form onSubmit={handleSubmit}>
-        <img className='navbarLogo' src={logo}></img>
+        <img className='navbarLogo' src={navLogoZelp}></img>
           <h2>Form to Create your Own Busniess</h2>
         {(setValidationErrors.length && hasSubmitted) ?
           <div id="ErrorDiv">

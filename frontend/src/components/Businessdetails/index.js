@@ -22,7 +22,7 @@ const Businessdetails = () => {
     const Arr = url.split("/")
     const id = Arr.at(-1)
 
-    // console.log(id,"*************")
+    console.log(id,"*************")
     const {business} = useSelector((state)=> state);
     const {review} = useSelector((state)=> state);
     // console.log(sessionUser.id,"*****#######", business.ownerId);
@@ -131,11 +131,11 @@ const Businessdetails = () => {
                 <p>Phone Number:{business.phone_number}</p>
                 <h3>{business.city},{business.state}</h3>
 
-                {(sessionUser.id===business.ownerId) ? <button onClick={handleEdit}>Edit</button> : <></>}
-                {(sessionUser.id===business.ownerId) ?<button onClick={()=>handleDelete()}>Delete</button>:<></>}
+                {(sessionUser?.id===business.ownerId) ? <button onClick={handleEdit}>Edit</button> : <></>}
+                {(sessionUser?.id===business.ownerId) ?<button onClick={()=>handleDelete()}>Delete</button>:<></>}
             </div>
 
-            <button onClick={()=>setFrom(true)}>Write A review</button>
+            {(sessionUser) ? <button onClick={()=>setFrom(true)}>Write A review</button>:<></>}
             {(form)? <form onSubmit={handleSubmitReview}>
                 <input
                 type='text'
