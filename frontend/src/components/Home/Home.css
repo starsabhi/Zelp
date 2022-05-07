@@ -1,5 +1,5 @@
 *{
-    font-family: Helvetica
+    font-family: Helvetica;
 }
 
 #CenterNameforHome{
@@ -13,15 +13,36 @@
  margin: 30px auto;
  box-shadow: 0px 0px 10px 2px gray;
  /* border: 10px solid red; */
- background-image: url("https://images.pexels.com/photos/370984/pexels-photo-370984.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+ background-image: url("https://images.squarespace-cdn.com/content/v1/5835d948414fb5a615f7641e/1481519058032-2V7L61ZFLEDNYTL2CYU7/Food+Photo+Background.jpg?format=2500w");
  background-size:cover ;
 text-align: center;
-color: white;
+/* color: white; */
 }
 
-#CenterNameforHomeh2{
+.CenterNameforHomeh2Class{
  display: flex;
  justify-content: center;
  align-items: center;
- margin-top: 150px;
+ font-weight: bolder;
+}
+
+#spanForName{
+    color: white;
+    font-size: 60px;
+    letter-spacing: 4px;
+    font-family: 'Times New Roman', Times, serif;
+    animation: maintext 4s 1;
+}
+
+@keyframes maintext {
+    0%{
+        color: black;
+    }
+    30%{
+        letter-spacing: 50px;
+    }
+    85%{
+        letter-spacing: 4px;
+        font-family: 'Times New Roman', Times, serif;
+    }
 }
