@@ -1,5 +1,6 @@
 *{
     font-family: Helvetica;
+    /* background-color: #c2aaaa7f; */
 }
 
 #CenterNameforHome{
@@ -30,7 +31,6 @@ text-align: center;
     color: white;
     font-size: 60px;
     letter-spacing: 4px;
-    font-family: 'Times New Roman', Times, serif;
     animation: maintext 4s 1;
 }
 
@@ -43,6 +43,22 @@ text-align: center;
     }
     85%{
         letter-spacing: 4px;
-        font-family: 'Times New Roman', Times, serif;
+    }
+}
+
+#infoForWebsite{
+    color: white;
+    animation: maininfo 4s 1;
+}
+
+@keyframes maininfo {
+    0%{
+        color: black;
+    }
+    30%{
+        color: black;
+    }
+    85%{
+        color: white;
     }
 }
