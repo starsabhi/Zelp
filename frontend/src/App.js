@@ -9,7 +9,7 @@ import Home from "./components/Home/index";
 import Businessdetails from "./components/Businessdetails/index";
 import NewBusiness from "./components/newBusiness/index";
 import EditBusiness from "./components/EditBusiness/index"
-import ReviewDetail from "./components/ReviewDetail";
+import ReviewDetail from "./components/ReviewDetail/index";
 
 
 function App() {
