@@ -1,0 +1,32 @@
+#githubLogo{
+height:20px;
+width: 20px;
+margin-right: 10px;
+
+}
+
+#linkedLogo{
+    height:20px;
+    width: 20px;
+    margin-right: 10px;
+
+}
+
+#footermainDiv{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-color: #333;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: -10px;
+    height: 25px;
+
+}
+
+#pElementforDev{
+    font-family: cursive;
+    font-size: small;
+    color: white;
+    margin-right: 10px;
+}
