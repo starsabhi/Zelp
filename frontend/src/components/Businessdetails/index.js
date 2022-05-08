@@ -11,7 +11,8 @@ const Businessdetails = () => {
     const [form , setFrom] = useState(false);
     const [answer, setAnswer] = useState("");
     const [rating, setRating] = useState("2")
-    const [editrRviewform, setEditrRviewform ] = useState(false)
+    const [editrRviewform, setEditrRviewform ] = useState(false);
+    const [deleteDyn, setDeleteDyn] = useState(false);
 
 
     let history = useHistory();
@@ -139,7 +140,16 @@ const Businessdetails = () => {
                     </div>
                 <div>
                 {(sessionUser?.id===business.ownerId) ? <button id="businessDPeditBtn" onClick={handleEdit}>Edit</button> : <></>}
-                {(sessionUser?.id===business.ownerId) ?<button id="businessDPdeletBtn" onClick={()=>handleDelete()}>Delete</button>:<></>}
+                {(sessionUser?.id===business.ownerId) ?<button id="businessDPdeletBtn" onClick={()=>(setDeleteDyn(true))}>Remove</button>:<></>}
+                {(deleteDyn) ?
+                    <>
+                    <h3 id="HiddentFormForDeleteConfo">This will permanetly Delete your business from Zelp</h3>
+                        <div id="hiddentformconfomationDiv">
+                            <button id="finalDeleteconfoBtn" onClick={()=>handleDelete}>Delete</button>
+                            <button id="finalDeleteconfoBtnCancel" onClick={()=>setDeleteDyn(false)}>Cancel</button>
+                        </div>
+                    </>
+                    :<></>}
                 </div>
                 </div>
             </div>

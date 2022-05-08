@@ -66,5 +66,48 @@
     border-radius: 5px;
     color: white;
     background-color: hsl(0, 2%, 25%);
+    cursor: pointer;
+    animation: buttonChange 4s infinite ;
+}
 
+@keyframes buttonChange {
+    0%{
+        color:black;
+    }
+    80%{
+        color:white
+    }
+}
+
+
+#HiddentFormForDeleteConfo{
+    display: flex;
+    justify-content: center;
+    color: red;
+}
+
+
+#hiddentformconfomationDiv{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#finalDeleteconfoBtn{
+    /* display: flex;
+    justify-content: center; */
+    border-radius: 5px;
+    color: white;
+    background-color: hsl(0, 2%, 25%);
+    height: 35px;
+    cursor: pointer;
+}
+
+#finalDeleteconfoBtnCancel{
+    height: 35px;
+    border-radius: 5px;
+    color: white;
+    background-color: hsl(0, 2%, 25%);
+    cursor: pointer;
+    margin-left: 250px;
 }
