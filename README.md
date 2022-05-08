@@ -23,7 +23,7 @@ Influenced by yelp, [Zelp](https://foodstuffzelp.herokuapp.com/) is website whic
   `psql -c "CREATE USER <username> PASSWORD '<password>' CREATEDB"`
 5. Start your shell and migrate and seed the database.   
 
-   `npx dotenv sequelize db:migrate`
-   `npx dotenv sequelize db:seed:all`
+    `npx dotenv sequelize db:migrate`
+    `npx dotenv sequelize db:seed:all`
 6. Run `npm start` inside both `/backend` and `/frontend`   
 
