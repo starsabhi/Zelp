@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import './LoginForm.css';
+import navLogoZelp from '../../images/navLogoZelp.png'
 
 function LoginFormPage() {
   const dispatch = useDispatch();
@@ -28,28 +29,34 @@ function LoginFormPage() {
   return (
   <div className="loginForm" >
     <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+      <img id="logInlogoFront" src={navLogoZelp}></img>
+      <div id="LOGinErrorDiv">
+      <ul id="LOGinerrorsdForCreateUL">
+        {errors.map((error, idx) => <li id="LOGinErrorsCreateBusinessform" key={idx}>{error}</li>)}
       </ul>
+      </div>
+
       <label>
         Username or Email
-        <input
+        </label>
+        <input id='loginInputFrontIn'
           type="text"
           value={credential}
           onChange={(e) => setCredential(e.target.value)}
           required
           />
-      </label>
+
       <label>
         Password
-        <input
+        </label>
+        <input id="loginInputFrontIn"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
           />
-      </label>
-      <button type="submit">Log In</button>
+      <button id='logInSubmitBtn' type="submit">Log In</button>
+      <NavLink id='donthaveLogin' to="/signup">Don't have account</NavLink>
     </form>
   </div>
   );
