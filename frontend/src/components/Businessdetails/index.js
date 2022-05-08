@@ -11,7 +11,9 @@ const Businessdetails = () => {
     const [form , setFrom] = useState(false);
     const [answer, setAnswer] = useState("");
     const [rating, setRating] = useState("2")
-    const [editrRviewform, setEditrRviewform ] = useState(false)
+    const [editrRviewform, setEditrRviewform ] = useState(false);
+    const [deleteDyn, setDeleteDyn] = useState(false);
+    const [hiddenForm , setHiddenForm] = useState(true);
 
 
     let history = useHistory();
@@ -114,7 +116,17 @@ const Businessdetails = () => {
     //     }
     // }
 
+    const anotherSubmit = (e) => {
+        e.preventDefault();
+        setDeleteDyn(true);
+        setHiddenForm(false);
+    }
 
+    const anotherCancel = (e) => {
+        e.preventDefault();
+        setDeleteDyn(false);
+        setHiddenForm(true);
+    }
 
     console.log(review.reviews,"%%%%%%%%%%%%")
 
@@ -138,8 +150,17 @@ const Businessdetails = () => {
                     <h3>Address:{business.address}, {business.city},{business.state}</h3>
                     </div>
                 <div>
-                {(sessionUser?.id===business.ownerId) ? <button id="businessDPeditBtn" onClick={handleEdit}>Edit</button> : <></>}
-                {(sessionUser?.id===business.ownerId) ?<button id="businessDPdeletBtn" onClick={()=>handleDelete()}>Delete</button>:<></>}
+                {((sessionUser?.id===business.ownerId)&&(hiddenForm)) ? <button id="businessDPeditBtn" onClick={handleEdit}>Edit</button> : <></>}
+                {((sessionUser?.id===business.ownerId)&&(hiddenForm)) ?<button id="businessDPdeletBtn" onClick={anotherSubmit}>Remove</button>:<></>}
+                {(deleteDyn) ?
+                    <>
+                    <h3 id="HiddentFormForDeleteConfo">This will permanetly Delete your business from Zelp</h3>
+                        <div id="hiddentformconfomationDiv">
+                            <button id="finalDeleteconfoBtn" onClick={handleDelete}>Delete</button>
+                            <button id="finalDeleteconfoBtnCancel" onClick={anotherCancel}>Cancel</button>
+                        </div>
+                    </>
+                    :<></>}
                 </div>
                 </div>
             </div>
@@ -148,28 +169,34 @@ const Businessdetails = () => {
                 {(sessionUser) ? <button id="addReviewForBD" onClick={()=>setFrom(true)}>Write A review</button>:<></>}
             </div>
             {(form)? <form onSubmit={handleSubmitReview}>
-                <input
+                <input id="allInputforCreateBinDetailpage"
                 type='text'
                 onChange={(e)=>setAnswer(e.target.value)}
                 value={answer}
                 placeholder="answer"
                 name="answer"
                 ></input>
-                <button>Submit</button>
-                <button onClick={handleCanceledit}>Cancel</button>
+                <div>
+                <button id="businessDPeditBtn">Submit</button>
+                <button id="businessDPeditBtn" onClick={handleCanceledit}>Cancel</button>
+                </div>
             </form> : <></>}
 
 
-            <h2>Reviews</h2>
+            <h2 id="Reviewsh2TaginDP">Reviews</h2>
             <div>
                 {(review?.reviews)?.map(ele => (
                     <>
-                        <p>{ele.answer}</p>
+                    <div id="outerDivforReviewsDiv">
+                        <div id="innerDivforReviewsDiv">
+                        <p id="contentInsidereiviews">{ele.answer}</p>
                         {(sessionUser?.id===ele.userId) ?
-                        <NavLink to={`/review/${business.id}/${ele.id}`}>
+                        <NavLink id="outerDivforReviewsDivwithNav" to={`/review/${business.id}/${ele.id}`}>
                             DELETE
                         </NavLink> : <></>
                         }
+                        </div>
+                    </div>
                 </>
                 ))}
             </div>
