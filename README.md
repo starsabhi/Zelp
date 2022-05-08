@@ -21,6 +21,7 @@ Influenced by yelp, [Zelp](https://foodstuffzelp.herokuapp.com/) is website whic
 4. Create a user in psql based on your .env DB_USERNAME.
   
   `psql -c "CREATE USER <username> PASSWORD '<password>' CREATEDB"`
+
 5. Start your shell and migrate and seed the database.   
 
     `npx dotenv sequelize db:migrate`
