@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink,Redirect,useHistory } from "react-router-dom";
 import { getReviews,getOneReview, writeReview, updateReview, deleteReview } from "../../store/reviews";
+import "./ReviewDetail.css";
 
 const ReviewDetail = () => {
     const thisState = useSelector((state)=> state.review)
@@ -41,6 +42,11 @@ const ReviewDetail = () => {
         }
     }
 
+    const handleCancel = (e) => {
+        e.preventDefault();
+        history.push(`/business/${BusinessId}`)
+    }
+
     // const handleEditReview = async(e) => {
     //     e.preventDefault();
     //     console.log( "THIS IS WORKING IN MORNING NEW SEASON OF NFL ")
@@ -74,10 +80,18 @@ const ReviewDetail = () => {
 
     return (
         <>
-        <h1>Your Review</h1>
-        <h2>{review.answer}</h2>
-        {/* <button onClick={()=>(setForm(true))}>Edit</button> */}
-        <button onClick={handleReviewDelete}>Delete</button>
+        <div id="mainDivReviewDetailPage">
+            <div id="innerDivReviewDetailPage">
+                <h1>Your Review</h1>
+                <h2>{review.answer}</h2>
+                    <h3 id="warningIdh3">This will Delete your Review Permanently</h3>
+                <div>
+                <button id="ReviewDetailPageidDB" onClick={handleReviewDelete}>Delete</button>
+                <button id="ReviewDetailPageidCB" onClick={handleCancel}>Cancel</button>
+
+                </div>
+            </div>
+        </div>
                     {/* {(form) ?
                         <form>
                             <input
