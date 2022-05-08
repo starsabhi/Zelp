@@ -31,18 +31,13 @@ const ReviewDetail = () => {
     const BusinessId = Arr.at(-2)
     // console.log(BusinessId)
 
-
-
-
-
-
-
-    const handleReviewDelete = (e) => {
+    const handleReviewDelete = async(e) => {
         // const { id } = review;
-        dispatch(deleteReview(id));
+        await dispatch(deleteReview(id));
         if(deleteReview){
             console.log("Review DELETE working ")
             history.push(`/business/${BusinessId}`)
+            // history.push(`/`)
         }
     }
 

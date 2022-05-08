@@ -76,11 +76,12 @@ export const writeReview = (review) => async(dispatch) => {
 }
 
 export const deleteReview = (reviewId) => async (dispatch) => {
-    // console.log("&&*&*&*&*&*&*&*", reviewId);
+    console.log("&&*&*&*&*&*&*&*", reviewId);
     const res = await csrfFetch(`/api/review/${reviewId}`,{
         method:"DELETE"
     })
 
+    console.log("&&*&*&*&*&*&*&*COMPLETD OR NOT");
     if(res.ok){
         const reviewId = await res.json();
         dispatch(removeReviews(reviewId))
