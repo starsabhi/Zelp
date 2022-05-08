@@ -10,6 +10,7 @@ import Businessdetails from "./components/Businessdetails/index";
 import NewBusiness from "./components/newBusiness/index";
 import EditBusiness from "./components/EditBusiness/index"
 import ReviewDetail from "./components/ReviewDetail/index";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           </Route>
         </Switch>
       )}
+      <Footer/>
     </>
   );
 }
