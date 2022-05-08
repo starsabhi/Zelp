@@ -13,5 +13,17 @@ Influenced by yelp, [Zelp](https://foodstuffzelp.herokuapp.com/) is website whic
 
    `https://github.com/starsabhi/Zelp`
 
-2.
+2. Install dependencies inside both `/backend` as well as `/frontend`.
+
+   `npm install`
+
+3. Create .env file same as .envexample file.
+4. Create a user in psql based on your .env DB_USERNAME.
+  
+  `psql -c "CREATE USER <username> PASSWORD '<password>' CREATEDB"`
+5. Start your shell and migrate and seed the database.   
+
+   `npx dotenv sequelize db:migrate`
+   `npx dotenv sequelize db:seed:all`
+6. Run `npm start` inside both `/backend` and `/frontend`   
 
