@@ -4,7 +4,6 @@ import { useSelector,useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import {login} from "../../store/session";
-import zelplogo from '../../images/logoZelp.png'
 import navLogoZelp from '../../images/navLogoZelp.png'
 
 

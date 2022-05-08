@@ -1,4 +1,57 @@
 #ErrorDiv{
     color: red;
     font-style: italic;
+    margin-bottom: 15px;
+}
+
+#errorsForCreateUL{
+    background-color: white;
+}
+
+#ErrorsCreateBusinessform{
+    float: none;
+    margin:5px;
+}
+
+.allInputforCreateB{
+    height: 25px;
+    width: 300px;
+    margin: 10px;
+    border: solid 1.5px gray;
+    border-radius: 5px;
+    background-color: lightgray ;
+
+}
+
+.allInputforCreateB:focus{
+  background-color: darkgrey ;
+  border: 2px solid #555;
+
+}
+
+.textAreaforCreateB{
+    height: 75px;
+    width: 300px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: lightgray ;
+
+}
+
+label{
+    font-weight: bold;
+}
+
+.createBsumbitBtn{
+ border-radius: 5px;
+ color: white;
+ background-color: hsl(0, 2%, 25%);
+ height: 30px;
+ width: 75px;
+ cursor: pointer;
+ margin-top: 10px;
+}
+
+#createBsumbitBtnID{
+    margin-right: 100px;
 }

@@ -9,5 +9,6 @@ form {
     max-width: 450px;
     min-width: min-content;
     padding: 20px;
-    box-shadow: inset 0px 0px 5px 2px rgb(0 0 0 / 30%);
+    box-shadow: inset 0px 0px 5px 2px #0d0d0d4d;
+    border-radius: 15px;
 }
