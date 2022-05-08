@@ -4,6 +4,7 @@ Influenced by yelp, [Zelp](https://foodstuffzelp.herokuapp.com/) is website whic
 
 ![ZelpApp](https://user-images.githubusercontent.com/95883222/167309830-9b18f0af-33dc-41da-a561-9dd4e3d8ac45.gif)
 
+## Index
 |[Zelp](https://foodstuffzelp.herokuapp.com/) |[Feature List](https://github.com/starsabhi/Zelp/wiki/Feature-List)|[Database Schema](https://github.com/starsabhi/Zelp/wiki/Database-Schema) |
 
 
