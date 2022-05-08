@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+import "./SignupFormPage.css"
+import navLogoZelp from '../../images/navLogoZelp.png'
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -27,48 +29,56 @@ function SignupFormPage() {
     return setErrors(['Confirm Password field must be the same as the Password field']);
   };
 
+
   return (
     <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+      <img id="logInlogoFront" src={navLogoZelp}></img>
+      <div id="signUpinErrorDiv">
+      <ul id="signUperrorsdForCreateUL">
+        {errors.map((error, idx) => <li id="signUpErrorsCreateBusinessform" key={idx}>{error}</li>)}
       </ul>
+      </div>
       <label>
         Email
-        <input
+        </label>
+        <input id='signUpInputFrontIn'
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-      </label>
+
       <label>
         Username
-        <input
+        </label>
+        <input  id='signUpInputFrontIn'
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
         />
-      </label>
+
       <label>
         Password
-        <input
+        </label>
+        <input  id='signUpInputFrontIn'
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-      </label>
+
       <label>
         Confirm Password
-        <input
+        </label>
+        <input  id='signUpInputFrontIn'
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
-      </label>
-      <button type="submit">Sign Up</button>
+      <button id="singUpInSubmitBtn" type="submit">Sign Up</button>
+      <NavLink id="donthaveLogin" to="/login">Already have account</NavLink>
     </form>
   );
 }

@@ -1,32 +1,18 @@
-form {
-    justify-content: center;
-    align-items: center;
-    border: solid 2px;
-    display: flex;
-    flex-direction: column;
-    margin: 60px auto 0;
-    width: 80%;
-    max-width: 450px;
-    min-width: min-content;
-    padding: 20px;
-    box-shadow: inset 0px 0px 5px 2px #0d0d0d4d;
-    border-radius: 15px;
-}
-
-#LOGinErrorDiv{
+#signUpinErrorDiv{
     color: red;
     font-style: italic;
     margin-bottom: 15px;
 }
 
-#LOGinerrorsdForCreateUL{
+#signUperrorsdForCreateUL{
     background-color: white;
 }
 
-#LOGinErrorsCreateBusinessform{
+#signUpErrorsCreateBusinessform{
     float: none;
     margin:5px;
     margin-top: 20px;
+    margin-left: 50px;
 }
 
 #logInlogoFront{
@@ -34,7 +20,7 @@ form {
 }
 
 
-#loginInputFrontIn{
+#signUpInputFrontIn{
     height: 25px;
     width: 300px;
     margin: 10px;
@@ -43,7 +29,7 @@ form {
     background-color: lightgray ;
 }
 
-#logInSubmitBtn{
+#singUpInSubmitBtn{
     border-radius: 5px;
     color: white;
     background-color: hsl(0, 2%, 25%);
