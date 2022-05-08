@@ -183,16 +183,20 @@ const Businessdetails = () => {
             </form> : <></>}
 
 
-            <h2>Reviews</h2>
+            <h2 id="Reviewsh2TaginDP">Reviews</h2>
             <div>
                 {(review?.reviews)?.map(ele => (
                     <>
-                        <p>{ele.answer}</p>
+                    <div id="outerDivforReviewsDiv">
+                        <div id="innerDivforReviewsDiv">
+                        <p id="contentInsidereiviews">{ele.answer}</p>
                         {(sessionUser?.id===ele.userId) ?
-                        <NavLink to={`/review/${business.id}/${ele.id}`}>
+                        <NavLink id="outerDivforReviewsDivwithNav" to={`/review/${business.id}/${ele.id}`}>
                             DELETE
                         </NavLink> : <></>
                         }
+                        </div>
+                    </div>
                 </>
                 ))}
             </div>
