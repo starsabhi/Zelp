@@ -10,4 +10,8 @@ Influenced by yelp, [Zelp](https://foodstuffzelp.herokuapp.com/) is website whic
 
 ## Getting Started
 1. Clone this repository
+
    `https://github.com/starsabhi/Zelp`
+
+2.
+
