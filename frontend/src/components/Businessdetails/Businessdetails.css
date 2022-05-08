@@ -1,4 +1,70 @@
 .businessDetailimg {
     height: 500px;
     width: 500px;
+    box-shadow: 0px 0px 5px 1px gray;
+
+}
+
+#businessDetailDivmain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    /* border: solid 1px gray; */
+}
+
+#businessDetailPageContent{
+    margin-top: 10px;
+    border: solid 1px grey;
+    width: 550px;
+    box-shadow: 0px 0px 10px 2px gray;
+    border-radius: 10px;
+}
+
+#businessDetailPageinnerContent{
+    margin-left: 25px;
+}
+
+#businessDPh2{
+    display: flex;
+    justify-content: center;
+    color: #2c2525b6;
+}
+
+#businessDPeditBtn{
+    border-radius: 5px;
+    color: white;
+    background-color: hsl(0, 2%, 25%);
+    height: 30px;
+    width: 75px;
+    cursor: pointer;
+    /* margin-top: 2px; */
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+#businessDPdeletBtn{
+    border-radius: 5px;
+    color: white;
+    background-color: hsl(0, 2%, 25%);
+    height: 30px;
+    width: 75px;
+    cursor: pointer;
+    /* margin-top: 2px; */
+    margin-left: 350px;
+}
+
+
+#reviewBtnForBDhiddenorNot{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#addReviewForBD{
+    height: 35px;
+    border-radius: 5px;
+    color: white;
+    background-color: hsl(0, 2%, 25%);
+
 }
