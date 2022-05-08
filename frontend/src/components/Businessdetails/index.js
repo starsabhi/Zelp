@@ -92,6 +92,11 @@ const Businessdetails = () => {
     }
 
 
+    const handleCanceledit = (e) => {
+        e.preventDefault();
+        setFrom(false)
+    }
+
     // const handleEditReview = async(e) => {
     //     e.preventDefault();
     //     const newReview = {
@@ -111,7 +116,7 @@ const Businessdetails = () => {
 
 
 
-
+    console.log(review.reviews,"%%%%%%%%%%%%")
 
     // const [editanswer, setEditAnswer] = useState(review)
     // console.log(review.reviews,"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
@@ -123,19 +128,25 @@ const Businessdetails = () => {
 
     return(
         <>
-        {/* {console.log(content)} */}
-            <div key={business.id}>
-                <h2>{business.name}</h2>
-                <img className="businessDetailimg" src={business.image}/>
-                <p>Description:  {business.description}</p>
-                <p>Phone Number:{business.phone_number}</p>
-                <h3>{business.city},{business.state}</h3>
-
-                {(sessionUser?.id===business.ownerId) ? <button onClick={handleEdit}>Edit</button> : <></>}
-                {(sessionUser?.id===business.ownerId) ?<button onClick={()=>handleDelete()}>Delete</button>:<></>}
+            <div id="businessDetailDivmain" key={business.id}>
+                <div id="businessDetailPageContent">
+                    <div id="businessDetailPageinnerContent">
+                    <h2 id="businessDPh2">{business.name}</h2>
+                    <img className="businessDetailimg" src={business.image}/>
+                    <p>Description:  {business.description}</p>
+                    <p>Phone Number: {business.phone_number}</p>
+                    <h3>Address:{business.address}, {business.city},{business.state}</h3>
+                    </div>
+                <div>
+                {(sessionUser?.id===business.ownerId) ? <button id="businessDPeditBtn" onClick={handleEdit}>Edit</button> : <></>}
+                {(sessionUser?.id===business.ownerId) ?<button id="businessDPdeletBtn" onClick={()=>handleDelete()}>Delete</button>:<></>}
+                </div>
+                </div>
             </div>
 
-            {(sessionUser) ? <button onClick={()=>setFrom(true)}>Write A review</button>:<></>}
+            <div id="reviewBtnForBDhiddenorNot">
+                {(sessionUser) ? <button id="addReviewForBD" onClick={()=>setFrom(true)}>Write A review</button>:<></>}
+            </div>
             {(form)? <form onSubmit={handleSubmitReview}>
                 <input
                 type='text'
@@ -145,22 +156,22 @@ const Businessdetails = () => {
                 name="answer"
                 ></input>
                 <button>Submit</button>
+                <button onClick={handleCanceledit}>Cancel</button>
             </form> : <></>}
 
+
             <h2>Reviews</h2>
-
             <div>
-            {(review.reviews)?.map(ele => (
-                <>
-
-            <p>{ele.answer}</p>
-            {(sessionUser.id===ele.userId)?
-            <NavLink to={`/review/${business.id}/${ele.id}`}>
-                EDIT OR DELETE
-            </NavLink> : <></>
-            }
-               </>
-            ))}
+                {(review?.reviews)?.map(ele => (
+                    <>
+                        <p>{ele.answer}</p>
+                        {(sessionUser?.id===ele.userId) ?
+                        <NavLink to={`/review/${business.id}/${ele.id}`}>
+                            DELETE
+                        </NavLink> : <></>
+                        }
+                </>
+                ))}
             </div>
 
         </>
