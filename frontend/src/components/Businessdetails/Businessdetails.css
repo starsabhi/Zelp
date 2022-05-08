@@ -19,6 +19,7 @@
     width: 550px;
     box-shadow: 0px 0px 10px 2px gray;
     border-radius: 10px;
+    background-color: rgb(255, 245, 242);
 }
 
 #businessDetailPageinnerContent{
@@ -150,6 +151,7 @@
     width: 250px;
     box-shadow: 0px 0px 10px 2px gray;
     border-radius: 10px;
+    background-color: rgb(217, 205, 205);
 }
 
 #outerDivforReviewsDivwithNav{
@@ -158,12 +160,30 @@
     /* justify-content: center; */
     align-items: center;
     text-decoration: none;
-    color: black;
+    /* color: rgb(187, 159, 159); */
+    color:rgb(201, 68, 68);
+    animation: deleteChange 4s infinite ;
+
 }
+
+@keyframes deleteChange {
+    0%{
+        color:rgb(201, 68, 68);
+    }
+    80%{
+        color:white
+    }
+}
+
+
+
 
 #contentInsidereiviews{
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
+    overflow-wrap: anywhere;
+    margin-left: 5px;
+    margin-right: 5px;
 }
