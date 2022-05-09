@@ -84,7 +84,7 @@ const Businessdetails = () => {
 
     const handleSubmitReview = async(e) => {
         e.preventDefault();
-        if(validationErrors.length>0) alert("Please Sumbit Review")
+        if(validationErrors.length>0) return alert("Please Sumbit Review")
         const newReview = {
             userId:sessionUser.id,
             businessId:business.id,
