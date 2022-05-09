@@ -59,11 +59,9 @@ How redux store work and how to connect backend with frontend so data can transf
         headers: {"Content-Type":"application/json"},
         body : JSON.stringify(payload)
     });
-
     if(response.ok){
         const busniess = await response.json()
         dispatch(addBusiness(busniess))
         return busniess;
     }
-
 }`
