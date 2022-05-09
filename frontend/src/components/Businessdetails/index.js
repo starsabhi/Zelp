@@ -53,10 +53,10 @@ const Businessdetails = () => {
         history.push(`/${business.id}/edit`)
     }
 
-    const handleDelete = (e) => {
+    const handleDelete = async (e) => {
         console.log("IS THIS WORKING*******Handler")
         const { id } = business;
-        dispatch(removeBusiness(id));
+        await dispatch(removeBusiness(id));
         console.log("IS THIS WORKING*************")
         if(removeBusiness){
             history.push("/")
