@@ -51,5 +51,5 @@ Influenced by yelp, [Zelp](https://foodstuffzelp.herokuapp.com/) is website whic
 3. Google maps
 
 ## Particular challenge
-How redux store work and how to connect backend with frontend so data can transfer. How to create database of business wit fetch api calls
+How redux store work and how to connect backend with frontend so data can transfer. How to create database of business with fetch api calls
 ![image](https://user-images.githubusercontent.com/95883222/167347739-86ad37e8-8bf6-4dad-9b55-3c5a013b9dbb.png)
