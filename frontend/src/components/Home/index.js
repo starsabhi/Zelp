@@ -10,7 +10,13 @@ return (
                 </span>
             </div>
             <p id="infoForWebsite">
-                Zelp Connects People with great local Restaurants
+                Zelp Connects People with great local Restaurants.
+            </p>
+            <p id="infoForWebsite">
+                Zelp works hard to maintain our community's trust
+            </p>
+            <p id="infoForWebsite">
+               and make platform helpful for everyone.
             </p>
         </div>
         {/* <img className="homepageImg" src="https:/s3-media0.fl.yelpcdn.com/assets/srv0/yelp_large_assets/a2a6dfbdce53/assets/img/home/hero_photos/Y52KtIDZeG8aAMBaLIjSlQ.jpg" /> */}
