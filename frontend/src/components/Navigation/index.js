@@ -10,7 +10,7 @@ import navLogoZelp from '../../images/navLogoZelp.png'
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
   const [errors, setErrors] = useState([]);
-  const credential = "demo@user.io";
+  const credential = "abhi@user.io";
   const password = "password";
   const dispatch = useDispatch();
   const demoLogin = () => {
