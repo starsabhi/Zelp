@@ -38,3 +38,16 @@ Influenced by yelp, [Zelp](https://foodstuffzelp.herokuapp.com/) is website whic
    `heroku git:remote -a <name-of-Heroku-app>`
 3. Initialize `npm init -y` in root directory and then Connect backend and frontend together with `npm --prefix backend install backend && npm --prefix frontend install frontend` command   
 4. Deploy your app on Heroku with `git push heroku main-branch:master` from main branch.
+
+## Feature List of Zelp
+1. As visitor you can checkout list of businesses on Zelp. As well as you can check details of business.
+2. As logged in user you can create,update,delete your own business page on zelp.
+3. As logged in user you can write review on business.
+4. As logged in user you can delete your own review permanently.
+
+## Future features
+1. Update review.
+2. Adding reviews of businesses.
+3. Google maps
+
+## Particular challenge
