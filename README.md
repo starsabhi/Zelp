@@ -47,7 +47,7 @@ Influenced by yelp, [Zelp](https://foodstuffzelp.herokuapp.com/) is website whic
 
 ## Future features
 1. Update review.
-2. Adding reviews of businesses.
+2. Adding rating to businesses.
 3. Google maps
 
 ## Particular challenge
