@@ -14,6 +14,14 @@ const Businessdetails = () => {
     const [editrRviewform, setEditrRviewform ] = useState(false);
     const [deleteDyn, setDeleteDyn] = useState(false);
     const [hiddenForm , setHiddenForm] = useState(true);
+    const [validationErrors, setValidationErrors] = useState([]);
+
+
+    useEffect(()=>{
+        let errors = [];
+        if(!answer.length) errors.push("Review can not be empty.")
+        setValidationErrors(errors);
+    },[answer])
 
 
     let history = useHistory();
@@ -76,6 +84,7 @@ const Businessdetails = () => {
 
     const handleSubmitReview = async(e) => {
         e.preventDefault();
+        if(validationErrors.length>0) alert("Please Sumbit Review")
         const newReview = {
             userId:sessionUser.id,
             businessId:business.id,
@@ -169,6 +178,9 @@ const Businessdetails = () => {
                 {(sessionUser) ? <button id="addReviewForBD" onClick={()=>setFrom(true)}>Write A review</button>:<></>}
             </div>
             {(form)? <form onSubmit={handleSubmitReview}>
+                {(validationErrors.length>0) && validationErrors?.map(error => (
+                    <li id="ErrorsCreateBusinessform" key={error}>{error}</li>
+                ))}
                 <input id="allInputforCreateBinDetailpage"
                 type='text'
                 onChange={(e)=>setAnswer(e.target.value)}
