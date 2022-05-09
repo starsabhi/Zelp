@@ -51,3 +51,19 @@ Influenced by yelp, [Zelp](https://foodstuffzelp.herokuapp.com/) is website whic
 3. Google maps
 
 ## Particular challenge
+How redux store work and how to connect backend with frontend so data can transfer. How to create database of business wit fetch api calls
+
+`export const writeBusiness = (payload) => async (dispatch) => {
+    const response = await csrfFetch("/api/business/new",{
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body : JSON.stringify(payload)
+    });
+
+    if(response.ok){
+        const busniess = await response.json()
+        dispatch(addBusiness(busniess))
+        return busniess;
+    }
+
+}`
