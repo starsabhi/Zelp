@@ -31,3 +31,10 @@ Influenced by yelp, [Zelp](https://foodstuffzelp.herokuapp.com/) is website whic
     `npx dotenv sequelize db:seed:all`
 6. To start application run `npm start` inside both `/backend` and `/frontend`   
 
+
+## Deploy on Heroku
+1. Login in Heroku.`heroku login` 
+2. Add Heroku as a remote to your project's git repository with this command.(change your app name)
+   `heroku git:remote -a <name-of-Heroku-app>`
+3. Initialize `npm init -y` in root directory and then Connect backend and frontend together with `npm --prefix backend install backend && npm --prefix frontend install frontend` command   
+4. Deploy your app on Heroku with `git push heroku main-branch:master` from main branch.
