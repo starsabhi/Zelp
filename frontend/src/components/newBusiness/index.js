@@ -38,7 +38,7 @@ const NewBusiness = () => {
     if(!image.length) errors.push("Please Enter Valid image")
     if(!phoneError.test(phone_number)) errors.push("Phone Number should be 10 Digit")
     if(!zipCodeError.test(zip_code)) errors.push("Please Enter Valid Zip Code e.g.75080")
-    if(!stateError.test(state)) errors.push("Please Enter Valid state")
+    // if(!stateError.test(state)) errors.push("Please Enter Valid state e.g. TX")
     setValidationErrors(errors)
   },[name,category,description,address,city,state,zip_code,phone_number,image])
 
