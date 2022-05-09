@@ -43,10 +43,16 @@ Influenced by yelp, [Zelp](https://foodstuffzelp.herokuapp.com/) is website whic
 ## Feature List of Zelp
 1. As visitor you can checkout list of businesses on Zelp. As well as you can check details of business.
 ![ZelpApp1](https://user-images.githubusercontent.com/95883222/167348800-d1aad183-85c0-4f1a-b4e7-7362fcabbb73.gif)
+
+
 2. As logged in user you can create,update,delete your own business page on zelp.
-![Uploading ZelpApp3.gif…]()
+![ZelpApp3](https://user-images.githubusercontent.com/95883222/167350961-07afd7a4-b639-4cf9-bf87-bc2f5d7b08f3.gif)
+
+
 3. As logged in user you can write review on business.
 ![ZelpApp6](https://user-images.githubusercontent.com/95883222/167350229-c17aac6c-0411-45ef-9771-c8324b11d8ec.gif)
+
+
 4. As logged in user you can delete your own review permanently.
 ![ZelpApp7](https://user-images.githubusercontent.com/95883222/167350395-da41b693-4fcc-4272-839d-043ba155dbc7.gif)
 
