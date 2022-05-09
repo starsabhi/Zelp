@@ -31,7 +31,7 @@ const EditBusiness = () => {
     useEffect(()=>{
       let errors = [];
       const phoneError = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/i ;
-      const stateError = /^(?:(A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|P[AR]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY]))$$/i;
+      // const stateError = /^(?:(A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|P[AR]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY]))$$/i;
       const zipCodeError = /^[0-9]{5}(?:-[0-9]{4})?$/i
 
       if(!name.length) errors.push("Please Enter Valid Name")
@@ -45,7 +45,7 @@ const EditBusiness = () => {
       if(!image.length) errors.push("Please Enter Valid image")
       if(!phoneError.test(phone_number)) errors.push("Phone Number should be 10 Digit")
       if(!zipCodeError.test(zip_code)) errors.push("Please Enter Valid Zip Code e.g.75080")
-      if(!stateError.test(state)) errors.push("Please Enter Valid state")
+      // if(!stateError.test(state)) errors.push("Please Enter Valid state")
       setValidationErrors(errors)
     },[name,category,description,address,city,state,zip_code,phone_number,image])
 
