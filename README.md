@@ -2,7 +2,8 @@
 Influenced by yelp, [Zelp](https://foodstuffzelp.herokuapp.com/) is website which connect poeple with local Restaurants. User can create, update and delete thier Restaurant profile/page on Zelp. Customers can write and delete reviews about their experience with Restaurant.
 
 
-![ZelpApp](https://user-images.githubusercontent.com/95883222/167309830-9b18f0af-33dc-41da-a561-9dd4e3d8ac45.gif)
+![ZelpApp](https://user-images.githubusercontent.com/95883222/167348600-18d18b64-ccf2-4bef-a6f5-43aa3b2b56be.gif)
+
 
 ## Index
 | [Zelp](https://foodstuffzelp.herokuapp.com/)      | [Feature List](https://github.com/starsabhi/Zelp/wiki/Feature-List) |     [Database Schema](https://github.com/starsabhi/Zelp/wiki/Database-Schema) | [API Routes](https://github.com/starsabhi/Zelp/wiki/API-Routes)
