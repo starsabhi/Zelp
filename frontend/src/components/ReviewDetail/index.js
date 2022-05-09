@@ -83,8 +83,8 @@ const ReviewDetail = () => {
         <div id="mainDivReviewDetailPage">
             <div id="innerDivReviewDetailPage">
                 <h1>Your Review</h1>
-                <h2>{review.answer}</h2>
-                    <h3 id="warningIdh3">This will Delete your Review Permanently</h3>
+                <h2 id="h2fordetailreviewd2">{review.answer}</h2>
+                    <h3 id="warningIdh3">Delete your Review Permanently</h3>
                 <div>
                 <button id="ReviewDetailPageidDB" onClick={handleReviewDelete}>Delete</button>
                 <button id="ReviewDetailPageidCB" onClick={handleCancel}>Cancel</button>
