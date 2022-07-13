@@ -21,10 +21,26 @@ const Footer = () => {
         <div>Abhishek Bornak</div>
         <div className="overrideDIV">
           <div className="divforlgofooter">
-            <img className="linkedLogo" src={linkedLogo} alt={linkedLogo}></img>
+            <a
+              href="https://www.linkedin.com/in/abhishek-bornak-semasna514865/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className="linkedLogo"
+                src={linkedLogo}
+                alt={linkedLogo}
+              ></img>
+            </a>
           </div>
           <div className="divforlgofooter">
-            <img className="githubLogo" src={gitLogo} alt={gitLogo}></img>
+            <a
+              href="https://github.com/starsabhi"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img className="githubLogo" src={gitLogo} alt={gitLogo}></img>
+            </a>
           </div>
         </div>
       </div>
