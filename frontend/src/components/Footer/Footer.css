@@ -3,14 +3,25 @@
   font-weight: 500;
   width: 100%;
   background-color: #f7f7f7;
+  padding: 5px;
+  color: rgba(110, 112, 114, 1);
 }
 
 .linkedLogo {
   height: 25px;
+  transition-duration: 0.5s;
+}
+
+.linkedLogo:hover {
+  transform: scale(1.1);
 }
 
 .githubLogo {
   height: 25px;
+  transition-duration: 0.5s;
+}
+.githubLogo:hover {
+  transform: scale(1.1);
 }
 
 .developerInfo {
