@@ -1,1 +1,107 @@
 /* TODO Add site wide styles */
+/* TODO Add site wide styles */
+
+html {
+  box-sizing: border-box;
+  /* display: flex; */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  /* only 100% works with sticky */
+  /* will allow the parent (root) container to continue to grow as necessary */
+  /* min-height: 100vh; */
+  width: 100%;
+  margin: 0px;
+}
+
+#root::-webkit-scrollbar {
+  width: 1em;
+}
+
+#root::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+#root::-webkit-scrollbar-thumb {
+  background-color: rgba(224, 7, 7, 1);
+  outline: 1px solid slategrey;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  /* min-height: 100vh; */
+  /* used to only apply to splash, double check in  */
+  overflow-x: hidden;
+  /* overflow: auto; */
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+textarea {
+  resize: none;
+}
+
+/* too powerful of a selector c id, can't overwrite*/
+/* #root * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* THEME */
+:root {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* font-family: Helvetica; */
+  /* box-sizing: border-box; */
+
+  --logoTextBlue: #0062dc;
+  --logoTextPink: #ff0084;
+
+  --nav: #212124;
+
+  --bg1: rgb(243, 245, 246);
+
+  /* flickr button blue */
+  --mid1: rgb(18, 143, 220);
+  --mid2: rgb(0, 109, 172);
+  --mid3: rgb(36, 101, 212);
+  --mid4: rgb(60, 145, 214);
+
+  --btn: rgb(63, 143, 214);
+  --btnTrue: rgb(18, 143, 220);
+  --btnHover: rgb(66, 150, 225);
+  --btnDelete: rgb(209, 61, 54);
+  --btnCancel: rgb(151, 158, 162);
+  --inputOutline: rgb(63, 143, 214);
+
+  --formLinkText: rgb(0, 109, 172);
+
+  --table1: #dedede;
+
+  --error1: rgb(252, 218, 224);
+  --error2: rgb(229, 108, 108);
+  --error3: rgb(109, 33, 33);
+
+  --delete1: rgb(176, 42, 42);
+
+  --bar: #ffca12;
+}
+
+div {
+  display: flex;
+}

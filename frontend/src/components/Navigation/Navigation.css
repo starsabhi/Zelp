@@ -1,56 +1,112 @@
-/* .navbarLogo {
-    height: 35px;
-    width: 80px;
-    margin-top: 10px;
-} */
+.navBar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
+.logoZelpnavBar {
+  /* display: flex; */
+  margin-top: -25px;
+  margin-bottom: -25px;
+  /* height: 50px; */
+  width: 100px;
 
-  li {
-    float: left;
-  }
+  /* height: 50px; */
+}
 
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    background-color: #333;
-  }
+.navLogoDiv {
+  display: flex;
+  height: 50px;
+  width: 100px;
+  /* border: 1px solid black; */
+  float: left;
+}
 
+.newBusniessClassnav {
+  display: flex;
+  margin-right: auto;
+  margin-left: 2%;
+}
 
-  #rightButton{
-      display: inline-flex;
-      background-color: #333;
-  }
+.navSignUp {
+  margin: 0px 10% 0px 10px;
+}
 
-  #rightSideinfo{
-    float: right;
-  }
-
-
-#demoBtn{
-  background-color: #333;
+.signUpBTN {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  height: 40px;
+  width: 100px;
   color: white;
-  border: none;
+  border: 1px solid rgba(224, 7, 7, 1);
+  background-color: rgba(224, 7, 7, 1);
+  border-radius: 5px;
   cursor: pointer;
+  transition-duration: 0.4s;
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+.signUpBTN:hover {
+  /* transform: scale(1.02); */
+  background-color: rgb(242, 7, 7);
 }
 
-#logoZelp{
-  height: 45px;
-  margin-top: -10px;
-  margin-bottom: -10px;
+.logInBTNnav {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  height: 40px;
+  width: 100px;
+  color: black;
+  border: 1px solid rgba(200, 201, 202, 1);
+  background-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition-duration: 1s;
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
 }
 
-.navBar{
-  margin-top: -10px;
-  margin-left: -10px;
-  margin-right: -10px;
+.navLoginbtnDiv {
+  margin: 0px 5px 0px 15px;
+}
+
+.logInBTNnav:hover {
+  /* transform: scale(1.02); */
+  background-color: rgba(200, 201, 202, 1);
+}
+
+.createNewBunisessclas {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  height: 40px;
+  width: 180px;
+  color: black;
+  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition-duration: 1s;
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.createNewBunisessclas:hover {
+  /* transform: scale(1.02); */
+  background-color: rgba(200, 201, 202, 1);
 }

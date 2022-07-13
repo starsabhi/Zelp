@@ -1,17 +1,17 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
-import {login} from "../../store/session";
-import navLogoZelp from '../../images/navLogoZelp.png'
+import { login } from '../../store/session';
+import navLogoZelp from '../../images/navLogoZelp.png';
+import ZelpLogo from '../../images/NavBar/Zelp1.svg';
 
-
-function Navigation({ isLoaded }){
-  const sessionUser = useSelector(state => state.session.user);
+function Navigation({ isLoaded }) {
+  const sessionUser = useSelector((state) => state.session.user);
   const [errors, setErrors] = useState([]);
-  const credential = "abhi@user.io";
-  const password = "password";
+  const credential = 'abhi@user.io';
+  const password = 'password';
   const dispatch = useDispatch();
   const demoLogin = () => {
     setErrors([]);
@@ -23,31 +23,47 @@ function Navigation({ isLoaded }){
 
   let sessionLinks;
   if (sessionUser) {
-    sessionLinks = (
-      <ProfileButton user={sessionUser} />
-    );
+    sessionLinks = <ProfileButton user={sessionUser} />;
   } else {
     sessionLinks = (
-      <div id="rightButton">
-        <button id='demoBtn' onClick={demoLogin}>Demo</button>
-        <NavLink className="navLogin" to="/login">Log In</NavLink>
-        <NavLink className="navSignUp" to="/signup">Sign Up</NavLink>
+      <div className="rightButton">
+        <div className="navLoginbtnDiv">
+          <button className="logInBTNnav" onClick={demoLogin}>
+            Demo
+          </button>
+        </div>
+        <div className="navLoginbtnDiv">
+          <NavLink to="/login">
+            <button className="logInBTNnav">Log In</button>
+          </NavLink>
+        </div>
+        <div className="navSignUp">
+          <NavLink className="navSignUp" to="/signup">
+            <button className="signUpBTN">Sign Up</button>
+          </NavLink>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className='navBar'>
-    <ul className='navbarli'>
-      {/* <li className='navbarli'> */}
-        <li><NavLink exact to="/"><img id='logoZelp' src={navLogoZelp}></img>
+    <nav className="navBar">
+      <div className="navLogoDiv">
+        <NavLink exact to="/">
+          <img className="logoZelpnavBar" src={ZelpLogo}></img>
           {/* <img className='navbarLogo' src={logo} /> */}
-          </NavLink></li>
-        <li><NavLink className="createnNew" to="/new">Create New</NavLink></li>
-        <li id="rightSideinfo">{isLoaded && sessionLinks}</li>
-      {/* </li> */}
-    </ul>
-    </div>
+        </NavLink>
+      </div>
+      <div className="newBusniessClassnav">
+        <NavLink className="createnNew" to="/new">
+          <button className="createNewBunisessclas">
+            <span>Create New Business</span>
+          </button>
+        </NavLink>
+      </div>
+
+      <div className="rightSideinfo">{isLoaded && sessionLinks}</div>
+    </nav>
   );
 }
 
