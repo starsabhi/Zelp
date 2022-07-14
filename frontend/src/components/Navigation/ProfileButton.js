@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
-import "./ProfileButton.css";
-
+import './ProfileButton.css';
 
 function ProfileButton({ user }) {
-
   const dispatch = useDispatch();
   const logout = (e) => {
     e.preventDefault();
@@ -13,13 +11,14 @@ function ProfileButton({ user }) {
   };
 
   return (
-        <ul id="profile-dropdown">
-          <li id="nameOfuser">Hello {user.username}</li>
-          {/* <li>{user.email}</li> */}
-          <li>
-            <button id="LogoutBtn" onClick={logout}>Log Out</button>
-          </li>
-        </ul>
+    <>
+      <div className="nameDivNAV">
+        <span className="nameOfuser">Hello {user.username}</span>
+        <button className="LogoutBtn" onClick={logout}>
+          Log Out
+        </button>
+      </div>
+    </>
   );
 }
 

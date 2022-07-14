@@ -1,32 +1,35 @@
-/* .ProfileButton {
-    color: white;
-    display: flex;
-    flex-direction: row-reverse;
-} */
-#nameOfuser{
-    color: white;
-    margin-right: 14px;
+.nameDivNAV {
+  display: flex;
 }
 
-#LogoutBtn{
-    border: 1px black;
-    padding: 1px;
-    margin-right: 10px;
-    cursor: pointer;
-     font-family:cursive;
-     border-radius: 5px;
+.LogoutBtn {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  height: 40px;
+  width: 100px;
+  color: white;
+  border: 1px solid rgba(224, 7, 7, 1);
+  background-color: rgba(224, 7, 7, 1);
+  border-radius: 5px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
 }
 
-#LogoutBtn:hover{
-    color:red;
-    border-color:#DDDDDD;
-
+.LogoutBtn:hover {
+  /* transform: scale(1.02); */
+  background-color: rgb(242, 7, 7);
 }
 
-#profile-dropdown{
-    margin-top: 15px;
-}
-
-#demoBtn{
-    font-size: 17px;
+.nameOfuser {
+  display: flex;
+  align-items: center;
+  margin: 0px 10px 0px 10px;
+  font-weight: 900;
 }

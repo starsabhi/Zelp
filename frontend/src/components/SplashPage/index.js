@@ -13,12 +13,11 @@ function SplashPage() {
                 Join our network by adding your business!!
               </span>
               <div className="innerZelpBUTN">
-                <NavLink to="/">
+                <NavLink to="/home">
                   <button className="innerZelpBUTNREAL">Our Restaurants</button>
                 </NavLink>
               </div>
             </div>
-            {/* <div className="innerZelpBUTNREAL1255">Our Restaurants</div> */}
           </div>
           <div className="rightSideofSplashPAge"></div>
         </div>

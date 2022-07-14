@@ -39,7 +39,7 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   z-index: 1;
-  animation: changeIMG 30s ease-in 5s infinite;
+  animation: changeIMG 25s ease-in 5s infinite;
 }
 
 @keyframes changeIMG {
@@ -96,7 +96,7 @@
 
 .innerZelpBUTNREAL {
   color: white;
-  background-color: black;
+  background-color: transparent;
   border-radius: 5px;
   cursor: pointer;
   height: 80px;
@@ -108,9 +108,11 @@
   transition-duration: 0.4s;
   letter-spacing: 0.1em;
   padding: 10px;
+  border: 1px solid white;
 }
 
 .innerZelpBUTNREAL:hover {
+  background-color: rgba(153, 153, 153, 0.897);
   transform: scale(1.2);
 }
 
@@ -124,46 +126,4 @@
   padding: 5px;
   letter-spacing: 0.1em;
   font-size: 20px;
-}
-
-.innerZelpBUTNREAL1255 {
-}
-
-.innerZelpBUTNREAL1255 {
-  position: relative;
-  margin: 300px auto 0;
-  height: 80px;
-  width: 220px;
-  background: linear-gradient(0deg, #000, #272727);
-}
-
-.innerZelpBUTNREAL1255:before,
-.innerZelpBUTNREAL1255:after {
-  font-size: 18px;
-  content: '';
-  position: absolute;
-  left: -2px;
-  top: -2px;
-  background: linear-gradient(45deg, #dcdcdc, #858599, #b38f8f, #e7e7e4);
-  background-size: 400%;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  z-index: -1;
-  animation: steam 20s linear infinite;
-}
-
-@keyframes steam {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-
-.innerZelpBUTNREAL1255:after {
-  filter: blur(50px);
 }
