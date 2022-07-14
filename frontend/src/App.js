@@ -30,7 +30,7 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/" exact>
+          <Route path="/home" exact>
             <Home />
           </Route>
           <Route path="/new" exact>
@@ -45,7 +45,7 @@ function App() {
           <Route path="/review/:businessId/:reviewId" exact>
             <ReviewDetail />
           </Route>
-          <Route path="/splashpage" exact>
+          <Route path="/" exact>
             <SplashPage />
           </Route>
         </Switch>
