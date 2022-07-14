@@ -45,10 +45,10 @@ function SignupFormPage() {
                   <h2 className="logintoZelp">Log in to Zelp</h2>
                 </div>
                 <div className="SIGNfirstspandiv">
-                  <span className="NewtoZELPSPAN">New to Zelp?</span>
+                  <span className="NewtoZELPSPAN">Already on Zelp!</span>
                   <span>
-                    <NavLink className="donthaveLogin2" to="/signup">
-                      <span className="singupFirstSPan">Sign up</span>
+                    <NavLink className="donthaveLogin2" to="/login">
+                      <span className="singupFirstSPan">Log in</span>
                     </NavLink>
                   </span>
                 </div>
@@ -106,10 +106,10 @@ function SignupFormPage() {
                   Log In
                 </button>
                 <div className="SIGNfirstspandiv2">
-                  <span className="NewtoZELPSPAN2">New to Zelp?</span>
+                  <span className="NewtoZELPSPAN2">Already on Zelp!</span>
                   <span>
-                    <NavLink className="donthaveLogin2" to="/signup">
-                      <span className="singupFirstSPan2">Sign up</span>
+                    <NavLink className="donthaveLogin2" to="/login">
+                      <span className="singupFirstSPan2">Log in</span>
                     </NavLink>
                   </span>
                 </div>
