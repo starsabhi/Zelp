@@ -16,6 +16,9 @@ const NewBusiness = () => {
   const [zip_code, setZipcode] = useState('');
   const [phone_number, setPhone_Number] = useState('');
   const [image, setImage] = useState('');
+  const [image1, setImage1] = useState('');
+  const [image2, setImage2] = useState('');
+  const [image3, setImage3] = useState('');
   const [validationErrors, setValidationErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
 
@@ -51,6 +54,9 @@ const NewBusiness = () => {
     zip_code,
     phone_number,
     image,
+    image1,
+    image2,
+    image3,
   ]);
 
   const sessionUser = useSelector((state) => state.session.user);
@@ -79,6 +85,9 @@ const NewBusiness = () => {
       zip_code,
       phone_number,
       image,
+      image1,
+      image2,
+      image3,
     };
 
     const business = await dispatch(writeBusiness(newBusiness));
@@ -207,6 +216,34 @@ const NewBusiness = () => {
               type="text"
               onChange={(e) => setImage(e.target.value)}
               value={image}
+              placeholder="Image URL"
+              name="image"
+            ></input>
+
+            <label className="lebalforAddBUSN">Image 2 URL</label>
+            <input
+              className="allInputforCreateB2"
+              type="text"
+              onChange={(e) => setImage1(e.target.value)}
+              value={image1}
+              placeholder="Image URL"
+              name="image"
+            ></input>
+            <label className="lebalforAddBUSN">Image 3 URL</label>
+            <input
+              className="allInputforCreateB2"
+              type="text"
+              onChange={(e) => setImage2(e.target.value)}
+              value={image2}
+              placeholder="Image URL"
+              name="image"
+            ></input>
+            <label className="lebalforAddBUSN">Image 4 URL</label>
+            <input
+              className="allInputforCreateB2"
+              type="text"
+              onChange={(e) => setImage3(e.target.value)}
+              value={image3}
               placeholder="Image URL"
               name="image"
             ></input>

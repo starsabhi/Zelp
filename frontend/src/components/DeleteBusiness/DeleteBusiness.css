@@ -1,0 +1,72 @@
+.mainDivForDeleteModalB {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  height: 180px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.warningSpanDiv {
+  font-weight: 700;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+}
+
+.buttonDivforDelteBE {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.DelteBTNBE {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  height: 40px;
+  width: 100px;
+  color: white;
+  border: 1px solid rgba(224, 7, 7, 1);
+  background-color: rgba(224, 7, 7, 1);
+  border-radius: 5px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  transition-duration: 0.4s;
+}
+
+.DelteBTNBECANCEL {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  height: 40px;
+  width: 100px;
+  color: white;
+  border: 1px solid grey;
+  background-color: rgba(113, 111, 111, 0.734);
+  border-radius: 5px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  transition-duration: 0.4s;
+}
+.DelteBTNBECANCEL:hover {
+  transform: scale(1.1);
+}
+
+.DelteBTNBE:hover {
+  transform: scale(1.1);
+}

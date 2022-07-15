@@ -53,11 +53,6 @@ export const removeBusiness = (businessId) => async (dispatch) => {
 };
 
 export const updateBusiness = (business, id) => async (dispatch) => {
-  console.log(
-    business,
-    '*****************ID N BUSINESS*******************',
-    id
-  );
   const response = await csrfFetch(`/api/business/${id}/edit`, {
     method: 'PATCH',
     headers: {
@@ -131,14 +126,12 @@ const businessReducer = (state = initialState, action) => {
       let newState = {};
       // console.log(action.business);
       newState = { ...action.business };
-      return action.business;
+      return newState;
     }
     case EDIT_BUSINESS: {
-      // console.log("REDUCER********************",action.business)
-      // let newState = {...state}
-      // newState[action.busniess.id] = action.business
-      // return newState
-      return action.business;
+      let newState = {};
+      newState[action.business.id] = action.business;
+      return newState;
     }
     case DELETE_BUSINESS: {
       let newState = { ...state };
