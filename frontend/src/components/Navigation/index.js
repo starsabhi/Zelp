@@ -50,15 +50,13 @@ function Navigation({ isLoaded }) {
     <nav className="navBar">
       <div className="navLogoDiv">
         <NavLink exact to="/">
-          <img className="logoZelpnavBar" src={ZelpLogo}></img>
+          <img className="logoZelpnavBar" src={ZelpLogo} alt={ZelpLogo}></img>
           {/* <img className='navbarLogo' src={logo} /> */}
         </NavLink>
       </div>
       <div className="newBusniessClassnav">
-        <NavLink className="createnNew" to="/new">
-          <button className="createNewBunisessclas">
-            <span>Create New Business</span>
-          </button>
+        <NavLink exact to="/new">
+          <button className="createNewBunisessclas">Create New Business</button>
         </NavLink>
       </div>
 

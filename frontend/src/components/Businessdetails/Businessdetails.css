@@ -1,189 +1,180 @@
 .businessDetailimg {
-    height: 500px;
-    width: 500px;
-    box-shadow: 0px 0px 5px 1px gray;
-
+  height: 500px;
+  width: 500px;
+  box-shadow: 0px 0px 5px 1px gray;
 }
 
-#businessDetailDivmain{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: center; */
-    /* border: solid 1px gray; */
+#businessDetailDivmain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  /* border: solid 1px gray; */
 }
 
-#businessDetailPageContent{
-    margin-top: 10px;
-    border: solid 1px grey;
-    width: 550px;
-    box-shadow: 0px 0px 10px 2px gray;
-    border-radius: 10px;
-    background-color: rgb(255, 245, 242);
+#businessDetailPageContent {
+  margin-top: 10px;
+  border: solid 1px grey;
+  width: 550px;
+  box-shadow: 0px 0px 10px 2px gray;
+  border-radius: 10px;
+  background-color: rgb(255, 245, 242);
 }
 
-#businessDetailPageinnerContent{
-    margin-left: 25px;
+#businessDetailPageinnerContent {
+  margin-left: 25px;
 }
 
-#businessDPh2{
-    display: flex;
-    justify-content: center;
-    color: #2c2525b6;
+#businessDPh2 {
+  display: flex;
+  justify-content: center;
+  color: #2c2525b6;
 }
 
-#businessDPeditBtn{
-    border-radius: 5px;
-    color: white;
-    background-color: hsl(0, 2%, 25%);
-    height: 30px;
-    width: 75px;
-    cursor: pointer;
-    /* margin-top: 2px; */
-    margin-left: 20px;
-    margin-bottom: 10px;
+#businessDPeditBtn {
+  border-radius: 5px;
+  color: white;
+  background-color: hsl(0, 2%, 25%);
+  height: 30px;
+  width: 75px;
+  cursor: pointer;
+  /* margin-top: 2px; */
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 
-#businessDPdeletBtn{
-    border-radius: 5px;
-    color: white;
-    background-color: hsl(0, 2%, 25%);
-    height: 30px;
-    width: 75px;
-    cursor: pointer;
-    /* margin-top: 2px; */
-    margin-left: 350px;
+#businessDPdeletBtn {
+  border-radius: 5px;
+  color: white;
+  background-color: hsl(0, 2%, 25%);
+  height: 30px;
+  width: 75px;
+  cursor: pointer;
+  /* margin-top: 2px; */
+  margin-left: 350px;
 }
 
-
-#reviewBtnForBDhiddenorNot{
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
+#reviewBtnForBDhiddenorNot {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
-#addReviewForBD{
-    height: 35px;
-    border-radius: 5px;
-    color: white;
-    background-color: hsl(0, 2%, 25%);
-    cursor: pointer;
-    animation: buttonChange 4s infinite ;
+#addReviewForBD {
+  height: 35px;
+  border-radius: 5px;
+  color: white;
+  background-color: hsl(0, 2%, 25%);
+  cursor: pointer;
+  animation: buttonChange 4s infinite;
 }
 
 @keyframes buttonChange {
-    0%{
-        color:black;
-    }
-    80%{
-        color:white
-    }
+  0% {
+    color: black;
+  }
+  80% {
+    color: white;
+  }
 }
 
-
-#HiddentFormForDeleteConfo{
-    display: flex;
-    justify-content: center;
-    color: red;
+#HiddentFormForDeleteConfo {
+  display: flex;
+  justify-content: center;
+  color: red;
 }
 
-
-#hiddentformconfomationDiv{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
+#hiddentformconfomationDiv {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
-#finalDeleteconfoBtn{
-    /* display: flex;
+#finalDeleteconfoBtn {
+  /* display: flex;
     justify-content: center; */
-    border-radius: 5px;
-    color: white;
-    background-color: hsl(0, 2%, 25%);
-    height: 35px;
-    cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  background-color: hsl(0, 2%, 25%);
+  height: 35px;
+  cursor: pointer;
 }
 
-#finalDeleteconfoBtnCancel{
-    height: 35px;
-    border-radius: 5px;
-    color: white;
-    background-color: hsl(0, 2%, 25%);
-    cursor: pointer;
-    margin-left: 250px;
+#finalDeleteconfoBtnCancel {
+  height: 35px;
+  border-radius: 5px;
+  color: white;
+  background-color: hsl(0, 2%, 25%);
+  cursor: pointer;
+  margin-left: 250px;
 }
 
-
-
-#allInputforCreateBinDetailpage{
-    height: 55px;
-    width: 300px;
-    margin: 10px;
-    border: solid 1.5px gray;
-    border-radius: 5px;
-    background-color: lightgray ;
-
+#allInputforCreateBinDetailpage {
+  height: 55px;
+  width: 300px;
+  margin: 10px;
+  border: solid 1.5px gray;
+  border-radius: 5px;
+  background-color: lightgray;
 }
 
-#Reviewsh2TaginDP{
-    display: flex;
-    justify-content: center;
+#Reviewsh2TaginDP {
+  display: flex;
+  justify-content: center;
 }
 
-
-#outerDivforReviewsDiv{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-    /* margin-top: 10px;
+#outerDivforReviewsDiv {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  /* margin-top: 10px;
     border: solid 1px grey;
     width: 250px;
     box-shadow: 0px 0px 10px 2px gray;
     border-radius: 10px; */
-    margin: 10px;
+  margin: 10px;
 }
 
-
-#innerDivforReviewsDiv{
-    margin-top: 10px;
-    border: solid 1px grey;
-    width: 250px;
-    box-shadow: 0px 0px 10px 2px gray;
-    border-radius: 10px;
-    background-color: rgb(217, 205, 205);
+#innerDivforReviewsDiv {
+  margin-top: 10px;
+  border: solid 1px grey;
+  width: 250px;
+  box-shadow: 0px 0px 10px 2px gray;
+  border-radius: 10px;
+  background-color: rgb(217, 205, 205);
 }
 
-#outerDivforReviewsDivwithNav{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-    text-decoration: none;
-    /* color: rgb(187, 159, 159); */
-    color:rgb(201, 68, 68);
-    animation: deleteChange 4s infinite ;
-
+#outerDivforReviewsDivwithNav {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  text-decoration: none;
+  /* color: rgb(187, 159, 159); */
+  color: rgb(201, 68, 68);
+  animation: deleteChange 4s infinite;
 }
 
 @keyframes deleteChange {
-    0%{
-        color:rgb(201, 68, 68);
-    }
-    80%{
-        color:white
-    }
+  0% {
+    color: rgb(201, 68, 68);
+  }
+  80% {
+    color: white;
+  }
 }
 
+#contentInsidereiviews {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  overflow-wrap: anywhere;
+  margin-left: 5px;
+  margin-right: 5px;
+}
 
-
-
-#contentInsidereiviews{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-    overflow-wrap: anywhere;
-    margin-left: 5px;
-    margin-right: 5px;
+.EDITDIVFOREDITING {
+  display: none;
 }

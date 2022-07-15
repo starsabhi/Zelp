@@ -49,7 +49,7 @@
   2.5% {
     background-image: url('../../images/SplashPAGEBG/selected.jpeg');
     filter: brightness(70%);
-    animation-delay: 2s;
+    /* animation-delay: 2s; */
   }
   25% {
     background-image: url('../../images/SplashPAGEBG/Seleted2.jpeg');

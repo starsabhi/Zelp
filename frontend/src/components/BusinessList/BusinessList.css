@@ -1,38 +1,48 @@
 .businessListimage {
-height: 400px;
-width: 500px;
+  height: 200px;
+  width: 200px;
 }
 
 .businessListClass {
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* /* justify-content: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 20px;
+  /* /* justify-content: center; */
 }
 
-.busniessClassArr{
-width: 540px;
-border: solid 1px;
-margin: 2px;
-box-shadow: 0px 0px 10px 2px gray;
-margin: 10px;
-background-color: hwb(0 90% 7% / 0.714);
-border-radius: 10px;
+.busniessClassArr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #ebebeb;
+  width: 100%;
+  margin: 15px;
 }
 
-.contentdiv{
-margin-left: 20px;
+.busniessClassArr:hover {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
-.BusniessIndName{
-display: flex;
-justify-content: center;
-color: #2c2525b6;
+.contentdiv {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  padding: 20px;
 }
 
-.CityandStateName{
-    float: right;
-    margin-right: 50px;
-    color: #2c2525b6;
+.leftSIDEoFSIGNLEDIV {
+  margin: 5px;
+  float: left;
+  /* border: 1px solid red; */
+  /* width: 50%; */
+}
+
+.rightSIDEoFSIGNLEDIV {
+  float: left;
+  width: 100%;
+  margin: 5px;
+  /* border: 1px solid green; */
 }
