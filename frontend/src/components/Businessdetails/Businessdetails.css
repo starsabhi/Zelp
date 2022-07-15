@@ -14,7 +14,7 @@
   height: 350px;
   object-fit: cover;
   background-size: cover;
-  filter: brightness(80%);
+  filter: brightness(60%);
 }
 
 .fistIMGGridDIV2 {
@@ -94,182 +94,31 @@
   box-shadow: 0px 0px 5px 1px gray;
 }
 
-.businessDetailDivmain {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  /* justify-content: center; */
-  /* border: solid 1px gray; */
-}
-
-.businessDetailPageContent {
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-  border: solid 1px grey;
-  width: 550px;
-  box-shadow: 0px 0px 10px 2px gray;
-  border-radius: 10px;
-  background-color: rgb(255, 245, 242);
-}
-
-.businessDetailPageinnerContent {
-  display: flex;
-  flex-direction: column;
-  margin-left: 25px;
-}
-
-.businessDPh2 {
-  display: flex;
-  justify-content: center;
-  color: #2c2525b6;
-}
-
-.businessDPeditBtn {
-  border-radius: 5px;
+.EditBusniessDetailTOGOpage {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  height: 40px;
+  width: 100px;
   color: white;
-  background-color: hsl(0, 2%, 25%);
-  height: 30px;
-  width: 75px;
-  cursor: pointer;
-  /* margin-top: 2px; */
-  margin-left: 20px;
-  margin-bottom: 10px;
-}
-
-.businessDPdeletBtn {
+  border: 1px solid white;
+  background-color: transparent;
   border-radius: 5px;
-  color: white;
-  background-color: hsl(0, 2%, 25%);
-  height: 30px;
-  width: 75px;
   cursor: pointer;
-  /* margin-top: 2px; */
-  margin-left: 350px;
+  transition-duration: 0.4s;
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  margin: 5px;
 }
 
-#reviewBtnForBDhiddenorNot {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+.EditBusniessDetailTOGOpage:hover {
+  background-color: rgb(255, 5, 5);
 }
 
-#addReviewForBD {
-  height: 35px;
-  border-radius: 5px;
-  color: white;
-  background-color: hsl(0, 2%, 25%);
-  cursor: pointer;
-  animation: buttonChange 4s infinite;
-}
-
-@keyframes buttonChange {
-  0% {
-    color: black;
-  }
-  80% {
-    color: white;
-  }
-}
-
-#HiddentFormForDeleteConfo {
-  display: flex;
-  justify-content: center;
-  color: red;
-}
-
-#hiddentformconfomationDiv {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-#finalDeleteconfoBtn {
-  /* display: flex;
-    justify-content: center; */
-  border-radius: 5px;
-  color: white;
-  background-color: hsl(0, 2%, 25%);
-  height: 35px;
-  cursor: pointer;
-}
-
-#finalDeleteconfoBtnCancel {
-  height: 35px;
-  border-radius: 5px;
-  color: white;
-  background-color: hsl(0, 2%, 25%);
-  cursor: pointer;
-  margin-left: 250px;
-}
-
-#allInputforCreateBinDetailpage {
-  height: 55px;
-  width: 300px;
-  margin: 10px;
-  border: solid 1.5px gray;
-  border-radius: 5px;
-  background-color: lightgray;
-}
-
-#Reviewsh2TaginDP {
-  display: flex;
-  justify-content: center;
-}
-
-#outerDivforReviewsDiv {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
-  /* margin-top: 10px;
-    border: solid 1px grey;
-    width: 250px;
-    box-shadow: 0px 0px 10px 2px gray;
-    border-radius: 10px; */
-  margin: 10px;
-}
-
-#innerDivforReviewsDiv {
-  margin-top: 10px;
-  border: solid 1px grey;
-  width: 250px;
-  box-shadow: 0px 0px 10px 2px gray;
-  border-radius: 10px;
-  background-color: rgb(217, 205, 205);
-}
-
-#outerDivforReviewsDivwithNav {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
-  text-decoration: none;
-  /* color: rgb(187, 159, 159); */
-  color: rgb(201, 68, 68);
-  animation: deleteChange 4s infinite;
-}
-
-/* @keyframes deleteChange {
-  0% {
-    color: rgb(201, 68, 68);
-  }
-  80% {
-    color: white;
-  }
-} */
-
-#contentInsidereiviews {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
-  overflow-wrap: anywhere;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.EDITDIVFOREDITING {
-  display: none;
+.buttosforEditandDelete {
+  margin: 5px 5px 5px -5px;
 }

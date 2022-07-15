@@ -6,12 +6,12 @@ import './EditBusiness.css';
 
 function EditBusinessCard(newBusiness) {
   const id = useParams();
-  // console.log(id);
+  // console.log(typeof id.businessId);
   // console.log(newBusiness);
   const dispatch = useDispatch();
 
-  const [name1, setName] = useState(newBusiness.newBusiness?.name);
-  // console.log(name1);
+  const [name, setName] = useState(newBusiness.newBusiness?.name);
+  console.log(name);
 
   const [category, setCategory] = useState(newBusiness.newBusiness?.category);
   // console.log(category);
@@ -42,7 +42,7 @@ function EditBusinessCard(newBusiness) {
     // const stateError = /^(?:(A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|P[AR]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY]))$$/i;
     const zipCodeError = /^[0-9]{5}(?:-[0-9]{4})?$/i;
 
-    if (!name1?.length) errors.push('Please Enter Valid Name');
+    if (!name?.length) errors.push('Please Enter Valid Name');
     if (!category?.length) errors.push('Please Enter Valid category');
     if (!description?.length) errors.push('Please Enter Valid description');
     if (!address?.length) errors.push('Please Enter Valid address');
@@ -58,7 +58,7 @@ function EditBusinessCard(newBusiness) {
     // if(!stateError.test(state)) errors.push("Please Enter Valid state")
     setValidationErrors(errors);
   }, [
-    name1,
+    name,
     category,
     description,
     address,
@@ -81,7 +81,7 @@ function EditBusinessCard(newBusiness) {
     }
 
     const newBusiness = {
-      name1,
+      name,
       ownerId: sessionUser.id,
       category,
       description,
@@ -97,7 +97,7 @@ function EditBusinessCard(newBusiness) {
     };
 
     const business = await dispatch(
-      updateBusiness(newBusiness, newBusiness.newBusiness?.id)
+      updateBusiness(newBusiness, parseInt(id.businessId))
     );
     // console.log(business, 'Updating Busniesss Completed');
     if (business) {
@@ -107,7 +107,7 @@ function EditBusinessCard(newBusiness) {
 
   const handleCancel = (e) => {
     e.preventDefault();
-    history.push(`/business/${id}`);
+    history.push(`/business/${parseInt(id.businessId)}`);
   };
 
   return (
@@ -133,12 +133,11 @@ function EditBusinessCard(newBusiness) {
               <></>
             )}
             <label className="lebalforAddBUSN">Name of Your Restaurant</label>
-
             <input
               className="allInputforCreateB2"
               type="text"
               onChange={(e) => setName(e.target.value)}
-              value={name1}
+              value={name}
               placeholder="Name"
               name="name"
             ></input>
@@ -246,7 +245,7 @@ function EditBusinessCard(newBusiness) {
               className="allInputforCreateB2"
               type="text"
               onChange={(e) => setImage3(e.target.value)}
-              value={image3}
+              value={image}
               placeholder="Image URL"
               name="image"
             ></input>

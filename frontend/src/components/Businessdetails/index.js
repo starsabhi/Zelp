@@ -4,276 +4,113 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getOneBusiness, removeBusiness } from '../../store/business';
 import { NavLink, Redirect, useHistory } from 'react-router-dom';
 import './Businessdetails.css';
-import {
-  getReviews,
-  writeReview,
-  updateReview,
-  deleteReview,
-} from '../../store/reviews';
-// import EditBusiness from "../EditBusiness/index";
+import MainModal from '../MainModal';
+import DeleteBusiness from '../DeleteBusiness';
 
 const Businessdetails = () => {
-  const [form, setFrom] = useState(false);
-  const [answer, setAnswer] = useState('');
-  const [rating, setRating] = useState('2');
-  const [editrRviewform, setEditrRviewform] = useState(false);
-  const [deleteDyn, setDeleteDyn] = useState(false);
-  const [hiddenForm, setHiddenForm] = useState(true);
-  const [validationErrors, setValidationErrors] = useState([]);
-
-  useEffect(() => {
-    let errors = [];
-    if (!answer.length) errors.push('Review can not be empty.');
-    setValidationErrors(errors);
-  }, [answer]);
-
   let history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
-  const url = window.location.pathname;
-  // console.log(window.location.pathname)
-  const Arr = url.split('/');
-  const id = Arr.at(-1);
-
-  //   console.log(id, '*************');
+  const new123 = useParams();
+  const id = new123.businessId;
+  console.log(id, '*************');
   const { business } = useSelector((state) => state);
-  console.log(business);
-  const { review } = useSelector((state) => state);
-  //   console.log(sessionUser.id, '*****#######', business.ownerId);
+  // console.log(business);
 
-  const reset = () => {
-    setAnswer('');
-  };
-
+  const [loaded, setLoaded] = useState(false);
   useEffect(() => {
-    dispatch(getOneBusiness(id));
-    // console.log(getOneBusiness(businessId))
+    dispatch(getOneBusiness(id)).then(() => setLoaded(true));
   }, [dispatch]);
 
-  useEffect(() => {
-    dispatch(getReviews(id));
-  }, [dispatch]);
-
-  //   const handleEdit = () => {
-  //     history.push(`/${business.id}/edit`);
-  //   };
-
-  const handleDelete = async (e) => {
-    // console.log('IS THIS WORKING*******Handler');
-    const { id } = business;
-    await dispatch(removeBusiness(id));
-    // console.log('IS THIS WORKING*************');
-    if (removeBusiness) {
-      history.push('/');
-    }
+  const gotoEditPage = () => {
+    history.push(`/${business.id}/edit`);
   };
 
-  // const handleReviewDelete = (e) => {
-  //     const { id } = review;
-  //     console.log(id, review, "THIS IS WORKING IN MORNING NEW SEASON OF NFL ")
-  //     dispatch(deleteReview(id));
-  //     if(deleteReview){
-  //         console.log("Review DELETE working ")
-  //     }
-  // }
+  //___________________________________________________________
 
-  const handleSubmitReview = async (e) => {
-    e.preventDefault();
-    if (validationErrors.length > 0) return alert('Please Sumbit Review');
-    const newReview = {
-      userId: sessionUser.id,
-      businessId: business.id,
-      rating,
-      answer,
-    };
-
-    const review = await dispatch(writeReview(newReview));
-    if (review) {
-      console.log('THIS WORKED AS WELL AS I THINK');
-      setFrom(false);
-      dispatch(getReviews(id));
-      reset();
-      // window.location.reload();
-    }
+  //Delete  Buniess MODAL
+  const [DeleteBModal, setDeleteEBModal] = useState(false);
+  const openEditSongModal = () => {
+    if (DeleteBModal) return; // do nothing if modal already showing
+    setDeleteEBModal(true); // else open modal
+    document.getElementById('root').classList.add('overflow');
+  };
+  const closeEditSongModal = () => {
+    if (!DeleteBModal) return; // do nothing if modal already closed
+    setDeleteEBModal(false); // else close modal
+    // disable page scrolling:
+    document.getElementById('root').classList.remove('overflow');
   };
 
-  const handleCanceledit = (e) => {
-    e.preventDefault();
-    setFrom(false);
+  const DeleteEntire = () => {
+    openEditSongModal();
   };
-
-  // const handleEditReview = async(e) => {
-  //     e.preventDefault();
-  //     const newReview = {
-  //         userId:sessionUser.id,
-  //         businessId:business.id,
-  //         rating,
-  //         answer
-  //     }
-  //     const review = await dispatch(updateReview(newReview));
-  //     if(review){
-  //         console.log("THIS WORKED AS WELL AS I THINK")
-  //         setEditrRviewform(false);
-  //         dispatch(getReviews(id));
-  //         reset();
-  //     }
-  // }
-
-  const anotherSubmit = (e) => {
-    e.preventDefault();
-    setDeleteDyn(true);
-    setHiddenForm(false);
-  };
-
-  const anotherCancel = (e) => {
-    e.preventDefault();
-    setDeleteDyn(false);
-    setHiddenForm(true);
-  };
+  //___________________________________________________________
 
   return (
     <>
-      {/* TRY */}
-      <>
-        <div className="GridMainDivwithImages">
-          <div
-            className="fistIMGGridDIV"
-            style={{ backgroundImage: `url(${business.image})` }}
-          ></div>
-          <div
-            className="fistIMGGridDIV2"
-            style={{ backgroundImage: `url(${business.image1})` }}
-          ></div>
-          <div
-            className="fistIMGGridDIV3"
-            style={{ backgroundImage: `url(${business.image2})` }}
-          ></div>
-          <div
-            className="fistIMGGridDIV4"
-            style={{ backgroundImage: `url(${business.image3})` }}
-          ></div>
-          <div className="leftSideAllimageGrid">
-            <div className="innnerInfoDivforGridName">
-              <div>
-                <h1 className="NameOfBusniess">{business.name}</h1>
-              </div>
-              <div>
-                <span className="spancatogorySpanDiv">{business.category}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </>
-      {/* TRY */}
-
-      {/* <div className="businessDetailDivmain" key={business.id}>
-        <div className="businessDetailPageContent">
-          <div className="businessDetailPageinnerContent">
-            <h2 className="businessDPh2">{business.name}</h2>
-            <img className="businessDetailimg" src={business.image} />
-            <p>Description: {business.description}</p>
-            <p>Phone Number: {business.phone_number}</p>
-            <h3>
-              Address:{business.address}, {business.city},{business.state}
-            </h3>
-          </div>
-          <div>
-            {sessionUser?.id === business.ownerId && hiddenForm ? (
-              <NavLink to={`/${business.id}/edit`}>
-                <button className="businessDPeditBtn">Edit</button>
-              </NavLink>
-            ) : (
-              <></>
-            )}
-            {sessionUser?.id === business.ownerId && hiddenForm ? (
-              <button className="businessDPdeletBtn" onClick={anotherSubmit}>
-                Remove
-              </button>
-            ) : (
-              <></>
-            )}
-            {deleteDyn ? (
-              <>
-                <h3 id="HiddentFormForDeleteConfo">
-                  This will permanetly Delete your business from Zelp
-                </h3>
-                <div id="hiddentformconfomationDiv">
-                  <button id="finalDeleteconfoBtn" onClick={handleDelete}>
-                    Delete
-                  </button>
-                  <button
-                    id="finalDeleteconfoBtnCancel"
-                    onClick={anotherCancel}
-                  >
-                    Cancel
-                  </button>
+      {loaded && (
+        <>
+          <MainModal showModal={DeleteBModal} closeModal={closeEditSongModal}>
+            <DeleteBusiness
+              business={business}
+              // sessionUser={sessionUser}
+            />
+          </MainModal>
+          <div className="GridMainDivwithImages">
+            <div
+              className="fistIMGGridDIV"
+              style={{ backgroundImage: `url(${business.image})` }}
+            ></div>
+            <div
+              className="fistIMGGridDIV2"
+              style={{ backgroundImage: `url(${business.image1})` }}
+            ></div>
+            <div
+              className="fistIMGGridDIV3"
+              style={{ backgroundImage: `url(${business.image2})` }}
+            ></div>
+            <div
+              className="fistIMGGridDIV4"
+              style={{ backgroundImage: `url(${business.image3})` }}
+            ></div>
+            <div className="leftSideAllimageGrid">
+              <div className="innnerInfoDivforGridName">
+                <div>
+                  <h1 className="NameOfBusniess">{business.name}</h1>
                 </div>
-              </>
-            ) : (
-              <></>
-            )}
-          </div>
-        </div>
-      </div> */}
-
-      {/* <div id="reviewBtnForBDhiddenorNot">
-        {sessionUser ? (
-          <button id="addReviewForBD" onClick={() => setFrom(true)}>
-            Write A review
-          </button>
-        ) : (
-          <></>
-        )}
-      </div> */}
-      {/* {form ? (
-        <form onSubmit={handleSubmitReview}>
-          {validationErrors.length > 0 &&
-            validationErrors?.map((error) => (
-              <li id="ErrorsCreateBusinessform" key={error}>
-                {error}
-              </li>
-            ))}
-          <input
-            id="allInputforCreateBinDetailpage"
-            type="text"
-            onChange={(e) => setAnswer(e.target.value)}
-            value={answer}
-            placeholder="answer"
-            name="answer"
-          ></input>
-          <div>
-            <button id="businessDPeditBtn">Submit</button>
-            <button id="businessDPeditBtn" onClick={handleCanceledit}>
-              Cancel
-            </button>
-          </div>
-        </form>
-      ) : (
-        <></>
-      )} */}
-
-      <h2 id="Reviewsh2TaginDP">Reviews</h2>
-      <div>
-        {/* {review?.reviews?.map((ele) => (
-          <>
-            <div id="outerDivforReviewsDiv">
-              <div id="innerDivforReviewsDiv">
-                <p id="contentInsidereiviews">{ele.answer}</p>
-                {sessionUser?.id === ele.userId ? (
-                  <NavLink
-                    id="outerDivforReviewsDivwithNav"
-                    to={`/review/${business.id}/${ele.id}`}
-                  >
-                    DELETE
-                  </NavLink>
-                ) : (
-                  <></>
-                )}
+                <div>
+                  <span className="spancatogorySpanDiv">
+                    {business.category}
+                  </span>
+                </div>
+                <div className="buttosforEditandDelete">
+                  {sessionUser?.id === business?.ownerId ? (
+                    <>
+                      <div>
+                        <button
+                          className="EditBusniessDetailTOGOpage"
+                          onClick={() => gotoEditPage()}
+                        >
+                          Edit
+                        </button>
+                        <button
+                          className="EditBusniessDetailTOGOpage"
+                          onClick={() => DeleteEntire()}
+                        >
+                          delele
+                        </button>
+                      </div>
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                </div>
               </div>
             </div>
-          </>
-        ))} */}
-      </div>
+          </div>
+        </>
+      )}
     </>
   );
 };

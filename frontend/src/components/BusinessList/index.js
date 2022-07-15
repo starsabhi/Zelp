@@ -15,18 +15,18 @@ const BusinessList = () => {
   return (
     <>
       <div className="businessListClass">
-        {businessList?.map(({ id, name, image, city, state }) => (
+        {businessList?.map(({ id, name, category, image, city, state }) => (
           <div key={id} className="busniessClassArr">
             <NavLink to={`business/${id}`}>
               <div className="contentdiv">
                 <div className="leftSIDEoFSIGNLEDIV">
-                  <img className="businessListimage" src={image} />
+                  <img className="businessListimage" src={image} alt={image} />
                 </div>
                 <div className="rightSIDEoFSIGNLEDIV">
                   <h2 className="BusniessIndName">{name}</h2>
-                  {/* <p className="CityandStateName">
-                    {city},{state}
-                  </p> */}
+                  <div className="catDivwithgreybg">
+                    <div className="catDivwithgreybgD2">{category}</div>
+                  </div>
                 </div>
               </div>
             </NavLink>
