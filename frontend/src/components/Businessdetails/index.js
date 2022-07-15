@@ -133,10 +133,43 @@ const Businessdetails = () => {
 
   return (
     <>
-      <div id="businessDetailDivmain" key={business.id}>
-        <div id="businessDetailPageContent">
-          <div id="businessDetailPageinnerContent">
-            <h2 id="businessDPh2">{business.name}</h2>
+      {/* TRY */}
+      <>
+        <div className="GridMainDivwithImages">
+          <div
+            className="fistIMGGridDIV"
+            style={{ backgroundImage: `url(${business.image})` }}
+          ></div>
+          <div
+            className="fistIMGGridDIV2"
+            style={{ backgroundImage: `url(${business.image1})` }}
+          ></div>
+          <div
+            className="fistIMGGridDIV3"
+            style={{ backgroundImage: `url(${business.image2})` }}
+          ></div>
+          <div
+            className="fistIMGGridDIV4"
+            style={{ backgroundImage: `url(${business.image3})` }}
+          ></div>
+          <div className="leftSideAllimageGrid">
+            <div className="innnerInfoDivforGridName">
+              <div>
+                <h1 className="NameOfBusniess">{business.name}</h1>
+              </div>
+              <div>
+                <span className="spancatogorySpanDiv">{business.category}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+      {/* TRY */}
+
+      {/* <div className="businessDetailDivmain" key={business.id}>
+        <div className="businessDetailPageContent">
+          <div className="businessDetailPageinnerContent">
+            <h2 className="businessDPh2">{business.name}</h2>
             <img className="businessDetailimg" src={business.image} />
             <p>Description: {business.description}</p>
             <p>Phone Number: {business.phone_number}</p>
@@ -147,13 +180,13 @@ const Businessdetails = () => {
           <div>
             {sessionUser?.id === business.ownerId && hiddenForm ? (
               <NavLink to={`/${business.id}/edit`}>
-                <button id="businessDPeditBtn">Edit</button>
+                <button className="businessDPeditBtn">Edit</button>
               </NavLink>
             ) : (
               <></>
             )}
             {sessionUser?.id === business.ownerId && hiddenForm ? (
-              <button id="businessDPdeletBtn" onClick={anotherSubmit}>
+              <button className="businessDPdeletBtn" onClick={anotherSubmit}>
                 Remove
               </button>
             ) : (
@@ -181,9 +214,9 @@ const Businessdetails = () => {
             )}
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div id="reviewBtnForBDhiddenorNot">
+      {/* <div id="reviewBtnForBDhiddenorNot">
         {sessionUser ? (
           <button id="addReviewForBD" onClick={() => setFrom(true)}>
             Write A review
@@ -191,8 +224,8 @@ const Businessdetails = () => {
         ) : (
           <></>
         )}
-      </div>
-      {form ? (
+      </div> */}
+      {/* {form ? (
         <form onSubmit={handleSubmitReview}>
           {validationErrors.length > 0 &&
             validationErrors?.map((error) => (
@@ -217,11 +250,11 @@ const Businessdetails = () => {
         </form>
       ) : (
         <></>
-      )}
+      )} */}
 
       <h2 id="Reviewsh2TaginDP">Reviews</h2>
       <div>
-        {review?.reviews?.map((ele) => (
+        {/* {review?.reviews?.map((ele) => (
           <>
             <div id="outerDivforReviewsDiv">
               <div id="innerDivforReviewsDiv">
@@ -239,7 +272,7 @@ const Businessdetails = () => {
               </div>
             </div>
           </>
-        ))}
+        ))} */}
       </div>
     </>
   );

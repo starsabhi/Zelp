@@ -7,7 +7,7 @@ import './EditBusiness.css';
 function EditBusinessCard(newBusiness) {
   const id = useParams();
   // console.log(id);
-  console.log(newBusiness);
+  // console.log(newBusiness);
   const dispatch = useDispatch();
 
   const [name1, setName] = useState(newBusiness.newBusiness?.name);
@@ -26,6 +26,10 @@ function EditBusinessCard(newBusiness) {
     newBusiness.newBusiness?.phone_number
   );
   const [image, setImage] = useState(newBusiness.newBusiness?.image);
+  const [image1, setImage1] = useState(newBusiness.newBusiness?.image1);
+  const [image2, setImage2] = useState(newBusiness.newBusiness?.image2);
+  const [image3, setImage3] = useState(newBusiness.newBusiness?.image3);
+
   const [validationErrors, setValidationErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const sessionUser = useSelector((state) => state.session.user);
@@ -63,6 +67,9 @@ function EditBusinessCard(newBusiness) {
     zip_code,
     phone_number,
     image,
+    image1,
+    image2,
+    image3,
   ]);
 
   const handleSubmit = async (e) => {
@@ -84,6 +91,9 @@ function EditBusinessCard(newBusiness) {
       zip_code,
       phone_number,
       image,
+      image1,
+      image2,
+      image3,
     };
 
     const business = await dispatch(
@@ -209,6 +219,34 @@ function EditBusinessCard(newBusiness) {
               type="text"
               onChange={(e) => setImage(e.target.value)}
               value={image}
+              placeholder="Image URL"
+              name="image"
+            ></input>
+
+            <label className="lebalforAddBUSN">Image 2 URL</label>
+            <input
+              className="allInputforCreateB2"
+              type="text"
+              onChange={(e) => setImage1(e.target.value)}
+              value={image1}
+              placeholder="Image URL"
+              name="image"
+            ></input>
+            <label className="lebalforAddBUSN">Image 3 URL</label>
+            <input
+              className="allInputforCreateB2"
+              type="text"
+              onChange={(e) => setImage2(e.target.value)}
+              value={image2}
+              placeholder="Image URL"
+              name="image"
+            ></input>
+            <label className="lebalforAddBUSN">Image 4 URL</label>
+            <input
+              className="allInputforCreateB2"
+              type="text"
+              onChange={(e) => setImage3(e.target.value)}
+              value={image3}
               placeholder="Image URL"
               name="image"
             ></input>
