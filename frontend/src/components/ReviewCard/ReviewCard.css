@@ -1,0 +1,178 @@
+.MainDivForReviewCard {
+  /* border: 1px solid rgba(189, 189, 189, 1); */
+  border-radius: 15px;
+  margin: 80px;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  flex-direction: column;
+  /* width: 500px; */
+  margin-left: 30%;
+  margin-right: 30%;
+}
+.MainDivForReviewCard2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px,
+    rgb(60 64 67 / 15%) 0px 1px 3px 1px;
+  /* width: 500px; */
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
+  border-radius: 5px;
+  padding: 12px;
+  margin-bottom: 50px;
+}
+
+.REviewCardDivH1Tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.AddReviewbtninsideDiv {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  height: 50px;
+  width: 120px;
+  margin-bottom: 15px;
+  /* border-radius: 3px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  transition-duration: 0.4s;
+  cursor: pointer; */
+  background-color: rgba(0, 0, 0, 0.71);
+  color: rgba(255, 255, 255, 0.723);
+  cursor: pointer;
+  border: 2px solid grey;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+}
+
+.AddReviewbtninsideDiv:hover {
+  transform: scale(1.2);
+  background-color: rgba(134, 118, 118, 0.66);
+  box-shadow: 0 12px 16px 0 rgba(239, 235, 235, 0.24),
+    0 17px 50px 0 rgba(247, 247, 247, 0.19);
+  color: black;
+}
+
+.reviewContentDivwrap {
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  margin: 10px;
+  border: 0.5px solid rgb(218, 213, 213);
+  border-radius: 5px;
+  padding: 10px;
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+}
+
+.mainDivforTwoBtneditRdR {
+  display: flex;
+  justify-content: center;
+}
+
+.reviewEditButton {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  height: 30px;
+  width: 60px;
+
+  margin-right: 10px;
+  background-color: rgba(14, 14, 14, 0.822);
+  color: rgba(255, 255, 255, 0.723);
+  cursor: pointer;
+  border: 2px solid grey;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+}
+.reviewEditButton:hover {
+  margin-left: 10px;
+  background-color: rgba(134, 118, 118, 0.66);
+  box-shadow: 0 12px 16px 0 rgba(239, 235, 235, 0.24),
+    0 17px 50px 0 rgba(247, 247, 247, 0.19);
+  color: black;
+  transform: scale(1.2);
+}
+
+.reviewDeleteButton {
+  height: 30px;
+  width: 60px;
+  margin-left: 10px;
+
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+
+  background-color: rgba(14, 14, 14, 0.822);
+  color: rgba(255, 255, 255, 0.723);
+  cursor: pointer;
+  border: 2px solid grey;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+}
+
+.reviewDeleteButton:hover {
+  background-color: rgba(134, 118, 118, 0.66);
+  box-shadow: 0 12px 16px 0 rgba(239, 235, 235, 0.24),
+    0 17px 50px 0 rgba(247, 247, 247, 0.19);
+  color: black;
+  transform: scale(1.2);
+}
+
+.reviewCardHeadaer {
+  font-weight: bolder;
+  font-size: 23px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.profilePicImg {
+  width: 20x;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 25px;
+}
+
+.infoProfile {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  box-shadow: rgb(233, 229, 229) 0px 10px 10px -10px;
+  /* border-bottom: 1px solid rgb(233, 229, 229); */
+}
+
+.leftSideinfowithProImg {
+  /* height: 20px; */
+  /* float: left; */
+}
+
+.rightSideinfoReviewCard {
+  /* display: flex;
+  float: right; */
+  margin-left: auto;
+  padding: 2px;
+}
+
+.RatingDiv4556891 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 5px 5px 5px;
+}
+
+.reviewContentDivmain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  padding: 5px;
+}
+
+.userNameDivwithPro {
+  padding: 2px;
+  margin-left: 5px;
+}

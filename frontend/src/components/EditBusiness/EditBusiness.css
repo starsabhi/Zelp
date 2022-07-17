@@ -1,57 +1,93 @@
-#ErrorDiv{
-    color: red;
-    font-style: italic;
-    margin-bottom: 0px;
+#ErrorDiv {
+  color: red;
+  font-style: italic;
+  margin-bottom: 0px;
 }
 
-#errorsForCreateUL{
-    background-color: white;
+#errorsForCreateUL {
+  background-color: white;
 }
 
-#ErrorsCreateBusinessform{
-    float: none;
-    margin:5px;
+#ErrorsCreateBusinessform {
+  float: none;
+  margin: 5px;
 }
 
-.allInputforCreateB{
-    height: 25px;
-    width: 300px;
-    margin: 10px;
-    border: solid 1.5px gray;
-    border-radius: 5px;
-    background-color: lightgray ;
-
+.allInputforCreateB {
+  height: 25px;
+  width: 300px;
+  margin: 10px;
+  border: solid 1.5px gray;
+  border-radius: 5px;
+  background-color: lightgray;
 }
 
-.allInputforCreateB:focus{
-  background-color: darkgrey ;
+.allInputforCreateB:focus {
+  background-color: darkgrey;
   border: 2px solid #555;
-
 }
 
-.textAreaforCreateB{
-    height: 75px;
-    width: 300px;
-    margin: 10px;
-    border-radius: 5px;
-    background-color: lightgray ;
-
+.textAreaforCreateB {
+  height: 75px;
+  width: 300px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: lightgray;
 }
 
-label{
-    font-weight: bold;
+label {
+  font-weight: bold;
 }
 
-.createBsumbitBtn{
- border-radius: 5px;
- color: white;
- background-color: hsl(0, 2%, 25%);
- height: 30px;
- width: 75px;
- cursor: pointer;
- margin-top: 10px;
+.createBsumbitBtn {
+  border-radius: 5px;
+  color: white;
+  background-color: hsl(0, 2%, 25%);
+  height: 30px;
+  width: 75px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-#createBsumbitBtnID{
-    margin-right: 100px;
+#createBsumbitBtnID {
+  margin-right: 100px;
+}
+
+.inputTypeAWS {
+}
+
+.inputTypeAWS::file-selector-button {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  height: 40px;
+  width: 100px;
+  color: black;
+  border: 1px solid rgba(200, 201, 202, 1);
+  background-color: rgba(207, 48, 48, 0.726);
+  border-radius: 5px;
+  cursor: pointer;
+  transition-duration: 1s;
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  content: 'Upload image';
+}
+
+.inputTypeAWS::file-selector-button:hover {
+  background-color: rgba(207, 48, 48, 0.834);
+}
+
+.innerSpanInputtyle {
+  content: 'Help';
+}
+
+.borderforFirstPic {
+  border: 1px solid rgba(172, 165, 165, 0.852);
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
 }

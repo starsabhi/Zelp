@@ -52,13 +52,39 @@ export const removeBusiness = (businessId) => async (dispatch) => {
   }
 };
 
-export const updateBusiness = (business, id) => async (dispatch) => {
+export const updateBusiness = (newbusiness, id) => async (dispatch) => {
+  const {
+    name,
+    ownerId,
+    category,
+    description,
+    address,
+    city,
+    state,
+    zip_code,
+    phone_number,
+    image,
+  } = newbusiness;
+
+  const formData = new FormData();
+  formData.append('name', name);
+  formData.append('ownerId', ownerId);
+  formData.append('description', description);
+  formData.append('address', address);
+  formData.append('category', category);
+  formData.append('state', state);
+  formData.append('city', city);
+  formData.append('phone_number', phone_number);
+  formData.append('zip_code', zip_code);
+
+  if (image) formData.append('image', image);
+
   const response = await csrfFetch(`/api/business/${id}/edit`, {
     method: 'PATCH',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'multipart/form-data',
     },
-    body: JSON.stringify(business),
+    body: formData,
   });
 
   if (response.ok) {
@@ -68,17 +94,45 @@ export const updateBusiness = (business, id) => async (dispatch) => {
   }
 };
 
-export const writeBusiness = (payload) => async (dispatch) => {
+export const writeBusiness = (newbusiness) => async (dispatch) => {
+  const {
+    name,
+    ownerId,
+    category,
+    description,
+    address,
+    city,
+    state,
+    zip_code,
+    phone_number,
+    image,
+  } = newbusiness;
+
+  const formData = new FormData();
+  formData.append('name', name);
+  formData.append('ownerId', ownerId);
+  formData.append('description', description);
+  formData.append('address', address);
+  formData.append('category', category);
+  formData.append('state', state);
+  formData.append('city', city);
+  formData.append('phone_number', phone_number);
+  formData.append('zip_code', zip_code);
+
+  if (image) formData.append('image', image);
+  // console.log(image, '************************************');
+
+  console.log(formData, '________________________________________-');
   const response = await csrfFetch('/api/business/new', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
+    headers: { 'Content-Type': 'multipart/form-data' },
+    body: formData,
   });
 
   if (response.ok) {
-    const busniess = await response.json();
-    dispatch(addBusiness(busniess));
-    return busniess;
+    const business = await response.json();
+    dispatch(addBusiness(business));
+    return business;
   }
 };
 

@@ -6,6 +6,9 @@ import { NavLink, Redirect, useHistory } from 'react-router-dom';
 import './Businessdetails.css';
 import MainModal from '../MainModal';
 import DeleteBusiness from '../DeleteBusiness';
+import ReviewCard from '../ReviewCard';
+import { getReviews, getOneReview } from '../../store/review';
+import ReadStarRating from '../ReviewCard/Rating/ReadStarRating';
 
 const Businessdetails = () => {
   let history = useHistory();
@@ -13,7 +16,9 @@ const Businessdetails = () => {
   const dispatch = useDispatch();
   const new123 = useParams();
   const id = new123.businessId;
-  console.log(id, '*************');
+  // console.log(id, '*************');
+  const Review = useSelector((state) => state.review);
+  const Reviews = Object.values(Review);
   const { business } = useSelector((state) => state);
   // console.log(business);
 
@@ -22,9 +27,24 @@ const Businessdetails = () => {
     dispatch(getOneBusiness(id)).then(() => setLoaded(true));
   }, [dispatch]);
 
+  useEffect(() => {
+    dispatch(getReviews(id));
+  }, [dispatch]);
+
   const gotoEditPage = () => {
     history.push(`/${business.id}/edit`);
   };
+
+  //_____________________TOTALREVIEWS_____________________________
+
+  const productReviews = Reviews.filter((ele) => ele.businessId == id);
+
+  let totalRating = null;
+  productReviews.forEach((review) => {
+    totalRating += review.rating;
+  });
+
+  //-----------------------------------------------------------------------
 
   //___________________________________________________________
 
@@ -62,7 +82,7 @@ const Businessdetails = () => {
               className="fistIMGGridDIV"
               style={{ backgroundImage: `url(${business.image})` }}
             ></div>
-            <div
+            {/* <div
               className="fistIMGGridDIV2"
               style={{ backgroundImage: `url(${business.image1})` }}
             ></div>
@@ -73,11 +93,17 @@ const Businessdetails = () => {
             <div
               className="fistIMGGridDIV4"
               style={{ backgroundImage: `url(${business.image3})` }}
-            ></div>
+            ></div> */}
             <div className="leftSideAllimageGrid">
               <div className="innnerInfoDivforGridName">
                 <div>
                   <h1 className="NameOfBusniess">{business.name}</h1>
+                </div>
+                <div className="RatingDivInsideDP">
+                  <ReadStarRating
+                    rating={totalRating / productReviews?.length}
+                  />
+                  {`(${productReviews?.length})`} Reviews
                 </div>
                 <div>
                   <span className="spancatogorySpanDiv">
@@ -109,6 +135,7 @@ const Businessdetails = () => {
               </div>
             </div>
           </div>
+          <ReviewCard Id={id} Reviews={Reviews} />
         </>
       )}
     </>
