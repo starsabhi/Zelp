@@ -1,0 +1,138 @@
+.resource-add-form-container {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* padding: 35px 0px; */
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.add-review-card {
+  width: 650px;
+  max-height: 650px;
+  /* min-height: calc(100vh - 3rem); */
+  padding: 25px;
+  /* border: 1px solid var(--table1); */
+  border-radius: 4px;
+  /* box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2); */
+  background-color: rgb(243, 243, 243);
+  position: relative;
+  border-radius: 5px;
+}
+
+.add-review-header {
+  text-align: center;
+  margin: 0px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: rgb(33, 33, 36);
+  text-size-adjust: 100%;
+  padding-bottom: 16px;
+  border-bottom: 2px dotted rgba(0, 0, 0, 0.482);
+}
+
+.resource-error-container {
+  /* background-color: #ffd8dc; */
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  padding: 8px;
+  margin-bottom: 16px;
+  color: rgb(196, 51, 41);
+}
+
+.resource-error-message {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0px;
+}
+
+.resource-add-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid var(--table1);
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2); */
+}
+
+.add-review-form-group {
+  display: flex;
+
+  width: 100%;
+
+  border-radius: 4px;
+  padding: 2px;
+  margin-bottom: 16px;
+}
+
+.add-review-label {
+  margin-left: -30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: default;
+  width: 130px;
+  padding-right: 16px;
+
+  font-size: 16px;
+  color: rgb(51, 51, 51);
+}
+
+.add-review-input {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  border-radius: 4px;
+  height: 40px;
+  width: 400px;
+  border: 1px solid rgb(126, 126, 126);
+  padding-left: 10px;
+}
+
+.add-review-input:focus {
+  outline: solid 1px;
+}
+
+.resource-btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* width: 300px; */
+  /* margin: 10px; */
+}
+
+.resource-cancel-btn,
+.resource-delete-btn {
+  height: 50px;
+  width: 100px;
+  margin: 10px;
+  border: 1px solid rgba(139, 143, 162, 1);
+  border-radius: 5px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.resource-cancel-btn:hover {
+  background-color: rgba(79, 83, 99, 1);
+  transform: scale(1.1);
+}
+
+.resource-delete-btn:hover {
+  background-color: rgba(79, 83, 99, 1);
+  transform: scale(1.1);
+}
+
+.errorsLi {
+  list-style-type: none;
+  color: red;
+}
+
+input[type='radio'] {
+  display: none;
+}

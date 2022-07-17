@@ -17,7 +17,7 @@ const EditBusiness = () => {
   const session23 = useSelector((state) => state);
   // console.log(session23, '22222222222222222');
   const session = useSelector((state) => state.business);
-  console.log(session);
+  // console.log(session);
   // console.log(`${session.name}`, '################################');
   const [name1, setName] = useState(session?.name);
   // console.log(name1);

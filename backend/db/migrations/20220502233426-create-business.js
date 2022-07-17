@@ -49,18 +49,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.TEXT,
       },
-      image1: {
-        allowNull: false,
-        type: Sequelize.TEXT,
-      },
-      image2: {
-        allowNull: false,
-        type: Sequelize.TEXT,
-      },
-      image3: {
-        allowNull: false,
-        type: Sequelize.TEXT,
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

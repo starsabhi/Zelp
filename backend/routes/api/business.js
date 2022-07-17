@@ -3,12 +3,16 @@ const { asyncHandler, csrfProtection } = require('../utils');
 const { requireAuth } = require('../../utils/auth');
 const router = express.Router();
 const db = require('../../db/models');
+const { singleMulterUpload, singlePublicFileUpload } = require('../../awsS3');
+const { check } = require('express-validator');
+const { handleValidationErrors } = require('../../utils/validation');
+
+const validatorBusniess = [handleValidationErrors];
 
 router.get(
   '/',
   asyncHandler(async (req, res) => {
     const businessess = await db.Business.findAll();
-    // console.log(businessess, "**************")
     res.json(businessess);
   })
 );
@@ -16,8 +20,9 @@ router.get(
 router.post(
   '/new',
   requireAuth,
+  validatorBusniess,
+  singleMulterUpload('image'),
   asyncHandler(async (req, res) => {
-    // console.log("*************************************************");
     const {
       name,
       ownerId,
@@ -28,11 +33,14 @@ router.post(
       state,
       zip_code,
       phone_number,
-      image,
-      image1,
-      image2,
-      image3,
     } = req.body;
+
+    console.log(
+      req.body,
+      '____________________________________________________________________'
+    );
+
+    const image = await singlePublicFileUpload(req.file);
 
     const newBusiness = await db.Business.create({
       name,
@@ -45,12 +53,7 @@ router.post(
       zip_code,
       phone_number,
       image,
-      image1,
-      image2,
-      image3,
     });
-
-    // console.log("*************************************************");
 
     res.json(newBusiness);
   })
@@ -67,9 +70,12 @@ router.get(
 
 router.patch(
   '/:businessId/edit',
+  validatorBusniess,
+  singleMulterUpload('image'),
   requireAuth,
   asyncHandler(async (req, res) => {
     // console.log("****************ROUTE************")
+    const { businessId } = req.params;
     const {
       name,
       ownerId,
@@ -81,30 +87,28 @@ router.patch(
       zip_code,
       phone_number,
       image,
-      image1,
-      image2,
-      image3,
     } = req.body;
-    const { businessId } = req.params;
     const business = await db.Business.findByPk(businessId);
 
-    if (ownerId === business.ownerId) {
-      await business.update({
-        name,
-        ownerId,
-        category,
-        description,
-        address,
-        city,
-        state,
-        zip_code,
-        phone_number,
-        image,
-        image1,
-        image2,
-        image3,
-      });
+    let editedPic;
+    if (req.file.fieldname === 'image') {
+      editedPic = await singlePublicFileUpload(req.file);
+    } else {
+      editedPic = image;
     }
+
+    await business.update({
+      name,
+      ownerId,
+      category,
+      description,
+      address,
+      city,
+      state,
+      zip_code,
+      phone_number,
+      image: editedPic,
+    });
 
     res.json(business);
   })
